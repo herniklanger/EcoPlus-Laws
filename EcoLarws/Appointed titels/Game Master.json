@@ -1,0 +1,87 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+  "name": "Game Masters",
+  "reference": false,
+  "description": null,
+  "managers": [
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "saltemike17",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "SaltEMike",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "The Illegal Guy",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "zeus_anoxia",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "Spooninatar",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "Generic_Overlord",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "RainbowWrangler",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "henrik-langer",
+      "reference": true
+    }
+  ],
+  "users": [
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "saltemike17",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "broken",
+      "reference": true
+    },
+    {
+      "type": "Eco.Gameplay.Players.User",
+      "name": "henrik-langer",
+      "reference": true
+    }
+  ],
+  "properties": {
+    "RequiredOfOfficeHolders": null,
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": null,
+        "AmountPerHour": null,
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": null
+  }
+}

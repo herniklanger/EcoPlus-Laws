@@ -1,0 +1,772 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Tree tax",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Logging Tax",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "TreeSpecies",
+                    "propDisplayName": "Tree Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "Felled",
+                        "titleBacking": "<ecoicon item=\"ChopTree\">Felled</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"ChopTree\">Felled</ecoicon> value of the event will be used.\n\n<ecoicon item=\"ChopTree\">Felled</ecoicon>: Was the tree felled?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "GameValueContext",
+                            "contextName": "Growth Percent",
+                            "titleBacking": "<ecoicon item=\"ChopTree\">Growth Percent</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"ChopTree\">Growth Percent</ecoicon> value of the event will be used.\n\n<ecoicon item=\"ChopTree\">Growth Percent</ecoicon>: A value of 100 represents a fully grown tree, 0 represents a newly-planted seed.\n"
+                          },
+                          "Comparison": "GreaterThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 25.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "TreeTax",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 20.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Logging Cleanup Stump",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopStump"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopStump",
+                    "propNameBacker": "TreeSpecies",
+                    "propDisplayName": "Tree Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopStump",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "Destroyed",
+                        "titleBacking": "<ecoicon item=\"ChopStump\">Destroyed</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"ChopStump\">Destroyed</ecoicon> value of the event will be used.\n\n<ecoicon item=\"ChopStump\">Destroyed</ecoicon>: Was the stump destroyed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                                    },
+                                    "Skills": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Skills.Skill"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<b><link=\"TypeTooltip:563\"><b><link=\"Item:LoggingSkill\"><style=\"Item\"><ecoicon item=\"Logging\">Logging</ecoicon></style></link></b></link></b>",
+                                      "entries": [
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.LoggingSkill"
+                                        }
+                                      ]
+                                    },
+                                    "Requirements": "HasAny",
+                                    "RequiredLevel": {
+                                      "type": "GameValueWrapper",
+                                      "value": 1.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "TreeTax",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "contextName": "Citizen",
+                                  "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                  "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": -15.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "TreeTax",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": -5.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Logging Cleanup Debris",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CleanupTreeDebris"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CleanupTreeDebris",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "TreeTax",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": -0.25
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Daly Tax",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Everyone",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 24.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                      "properties": {
+                                        "LeftNumber": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyOwned",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "contextName": "Citizen",
+                                              "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                              "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                            },
+                                            "Districts": {
+                                              "type": "GamePickerList",
+                                              "mustDeriveType": {
+                                                "type": "Type",
+                                                "value": "Eco.Gameplay.LegislationSystem.District"
+                                              },
+                                              "requiredTag": null,
+                                              "internalDescription": "Any",
+                                              "entries": []
+                                            },
+                                            "Requirements": "InsideOne",
+                                            "IgnoreGovernmentOwned": true,
+                                            "WeightByPercentOwned": true
+                                          }
+                                        },
+                                        "Operation": "Subtract",
+                                        "RightNumber": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyOwned",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "contextName": "Citizen",
+                                              "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                              "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                            },
+                                            "Districts": {
+                                              "type": "GamePickerList",
+                                              "mustDeriveType": {
+                                                "type": "Type",
+                                                "value": "Eco.Gameplay.LegislationSystem.District"
+                                              },
+                                              "requiredTag": null,
+                                              "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:376\"><ecoicon item=\"District\"><color=#A80AA2FF>Garbage Dump 15</color></ecoicon></link></b>\r\n<b><link=\"ref:District:370\"><ecoicon item=\"District\"><color=#FBF2A5FF>Goverment 18</color></ecoicon></link></b></foldout>",
+                                              "entries": [
+                                                {
+                                                  "type": "Eco.Gameplay.LegislationSystem.District",
+                                                  "name": "Goverment 18",
+                                                  "reference": true
+                                                },
+                                                {
+                                                  "type": "Eco.Gameplay.LegislationSystem.District",
+                                                  "name": "Garbage Dump 15",
+                                                  "reference": true
+                                                }
+                                              ]
+                                            },
+                                            "Requirements": "InsideOne",
+                                            "IgnoreGovernmentOwned": true,
+                                            "WeightByPercentOwned": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "GreaterThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 50.0
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                    },
+                                    "Skills": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Skills.Skill"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<b><link=\"TypeTooltip:2156\"><b><link=\"Item:FarmerSkill\"><style=\"Item\"><ecoicon item=\"FarmerSkill\">Farmer</ecoicon></style></link></b></link></b>  <b><link=\"TypeTooltip:406\"><b><link=\"Item:GatheringSkill\"><style=\"Item\"><ecoicon item=\"GatheringSkill\">Gathering</ecoicon></style></link></b></link></b>",
+                                      "entries": [
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.GatheringSkill"
+                                        },
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.FarmerSkill"
+                                        }
+                                      ]
+                                    },
+                                    "Requirements": "HasNone",
+                                    "RequiredLevel": {
+                                      "type": "GameValueWrapper",
+                                      "value": 1.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "PropertyTax",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "contextName": "Citizen",
+                                  "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                  "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 200.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                      "properties": {
+                                        "LeftNumber": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyOwned",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "contextName": "Citizen",
+                                              "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                              "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                            },
+                                            "Districts": {
+                                              "type": "GamePickerList",
+                                              "mustDeriveType": {
+                                                "type": "Type",
+                                                "value": "Eco.Gameplay.LegislationSystem.District"
+                                              },
+                                              "requiredTag": null,
+                                              "internalDescription": "Any",
+                                              "entries": []
+                                            },
+                                            "Requirements": "InsideOne",
+                                            "IgnoreGovernmentOwned": true,
+                                            "WeightByPercentOwned": true
+                                          }
+                                        },
+                                        "Operation": "Subtract",
+                                        "RightNumber": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyOwned",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "contextName": "Citizen",
+                                              "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                              "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                            },
+                                            "Districts": {
+                                              "type": "GamePickerList",
+                                              "mustDeriveType": {
+                                                "type": "Type",
+                                                "value": "Eco.Gameplay.LegislationSystem.District"
+                                              },
+                                              "requiredTag": null,
+                                              "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:376\"><ecoicon item=\"District\"><color=#A80AA2FF>Garbage Dump 15</color></ecoicon></link></b>\r\n<b><link=\"ref:District:370\"><ecoicon item=\"District\"><color=#FBF2A5FF>Goverment 18</color></ecoicon></link></b></foldout>",
+                                              "entries": [
+                                                {
+                                                  "type": "Eco.Gameplay.LegislationSystem.District",
+                                                  "name": "Goverment 18",
+                                                  "reference": true
+                                                },
+                                                {
+                                                  "type": "Eco.Gameplay.LegislationSystem.District",
+                                                  "name": "Garbage Dump 15",
+                                                  "reference": true
+                                                }
+                                              ]
+                                            },
+                                            "Requirements": "InsideOne",
+                                            "IgnoreGovernmentOwned": true,
+                                            "WeightByPercentOwned": true
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "GreaterThan",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 100.0
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                    },
+                                    "Skills": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Skills.Skill"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<b><link=\"TypeTooltip:2156\"><b><link=\"Item:FarmerSkill\"><style=\"Item\"><ecoicon item=\"FarmerSkill\">Farmer</ecoicon></style></link></b></link></b>  <b><link=\"TypeTooltip:406\"><b><link=\"Item:GatheringSkill\"><style=\"Item\"><ecoicon item=\"GatheringSkill\">Gathering</ecoicon></style></link></b></link></b>",
+                                      "entries": [
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.GatheringSkill"
+                                        },
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.FarmerSkill"
+                                        }
+                                      ]
+                                    },
+                                    "Requirements": "HasAny",
+                                    "RequiredLevel": {
+                                      "type": "GameValueWrapper",
+                                      "value": 1.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "PropertyTax",
+                                "Person": {
+                                  "type": "GameValueContext",
+                                  "contextName": "Citizen",
+                                  "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                  "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 200.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
