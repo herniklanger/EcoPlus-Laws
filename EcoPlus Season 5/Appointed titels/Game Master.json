@@ -10,26 +10,11 @@
   "managers": [
     {
       "type": "Eco.Gameplay.Players.User",
-      "name": "SaltEMike",
-      "reference": true
-    },
-    {
-      "type": "Eco.Gameplay.Players.User",
-      "name": "The Illegal Guy",
-      "reference": true
-    },
-    {
-      "type": "Eco.Gameplay.Players.User",
       "name": "henrik-langer",
       "reference": true
     }
   ],
   "users": [
-    {
-      "type": "Eco.Gameplay.Players.User",
-      "name": "broken",
-      "reference": true
-    },
     {
       "type": "Eco.Gameplay.Players.User",
       "name": "henrik-langer",
