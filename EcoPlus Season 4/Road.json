@@ -132,11 +132,7 @@
                       },
                       "Currency": {
                         "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "",
-                          "reference": true
-                        }
+                        "value": 
                       },
                       "Amount": {
                         "type": "GameValueWrapper",
@@ -247,11 +243,7 @@
                       },
                       "Currency": {
                         "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "",
-                          "reference": true
-                        }
+                        "value": 
                       },
                       "Amount": {
                         "type": "GameValueWrapper",
@@ -396,11 +388,7 @@
                       },
                       "Currency": {
                         "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "",
-                          "reference": true
-                        }
+                        "value": 
                       },
                       "Amount": {
                         "type": "GameValueWrapper",
@@ -511,11 +499,7 @@
                       },
                       "Currency": {
                         "type": "GameValueWrapper",
-                        "value": {
-                          "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "",
-                          "reference": true
-                        }
+                        "value": 
                       },
                       "Amount": {
                         "type": "GameValueWrapper",
