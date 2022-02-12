@@ -134,7 +134,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Gold Coin",
+                          "name": "",
                           "reference": true
                         }
                       },
@@ -249,7 +249,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Gold Coin",
+                          "name": "",
                           "reference": true
                         }
                       },
@@ -398,7 +398,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Gold Coin",
+                          "name": "",
                           "reference": true
                         }
                       },
@@ -513,7 +513,7 @@
                         "type": "GameValueWrapper",
                         "value": {
                           "type": "Eco.Gameplay.Economy.Currency",
-                          "name": "Gold Coin",
+                          "name": "",
                           "reference": true
                         }
                       },
