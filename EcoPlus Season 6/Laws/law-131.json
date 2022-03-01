@@ -1,0 +1,1670 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Helper",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 1",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FirstLogin"
+                },
+                "Configs": []
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Pay_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Housing Token",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 2",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.OpenAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.OpenAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "World Object Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>110 World Objects</u></linktext><title>110 World Objects</title><b><link=\"TypeTooltip:2306\"><b><link=\"Item:HangingLongSteelSignItem\"><style=\"Item\"><ecoicon item=\"HangingLongSteelSignItem\">Hanging Long Steel Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:355\"><b><link=\"Item:HangingSteelFramedSignItem\"><style=\"Item\"><ecoicon item=\"HangingSteelFramedSignItem\">Hanging Steel Framed Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:89\"><b><link=\"Item:HangingSteelMineSignItem\"><style=\"Item\"><ecoicon item=\"HangingSteelMineSignItem\">Hanging Steel Mine Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:93\"><b><link=\"Item:HangingSteelPlainSignItem\"><style=\"Item\"><ecoicon item=\"HangingSteelPlainSignItem\">Hanging Steel Plain Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1195\"><b><link=\"Item:HangingSteelShopSignItem\"><style=\"Item\"><ecoicon item=\"HangingSteelShopSignItem\">Hanging Steel Shop Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1005\"><b><link=\"Item:LargeHangingAshlarBasaltSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarBasaltSignItem\">Large Hanging Ashlar Basalt Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2092\"><b><link=\"Item:LargeHangingAshlarGneissSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarGneissSignItem\">Large Hanging Ashlar Gneiss Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2561\"><b><link=\"Item:LargeHangingAshlarGraniteSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarGraniteSignItem\">Large Hanging Ashlar Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1218\"><b><link=\"Item:LargeHangingAshlarLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarLimestoneSignItem\">Large Hanging Ashlar Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2745\"><b><link=\"Item:LargeHangingAshlarSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarSandstoneSignItem\">Large Hanging Ashlar Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1056\"><b><link=\"Item:LargeHangingAshlarShaleSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarShaleSignItem\">Large Hanging Ashlar Shale Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1822\"><b><link=\"Item:LargeHangingAshlarStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingAshlarStoneSignItem\">Large Hanging Ashlar Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2507\"><b><link=\"Item:LargeHangingBirchSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingBirchSignItem\">Large Hanging Birch Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:75\"><b><link=\"Item:LargeHangingCedarSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingCedarSignItem\">Large Hanging Cedar Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1474\"><b><link=\"Item:LargeHangingCeibaSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingCeibaSignItem\">Large Hanging Ceiba Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1986\"><b><link=\"Item:LargeHangingFirSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingFirSignItem\">Large Hanging Fir Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1685\"><b><link=\"Item:LargeHangingHardwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingHardwoodSignItem\">Large Hanging Hardwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2527\"><b><link=\"Item:LargeHangingJoshuaSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingJoshuaSignItem\">Large Hanging Joshua Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2000\"><b><link=\"Item:LargeHangingLumberSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingLumberSignItem\">Large Hanging Lumber Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:190\"><b><link=\"Item:LargeHangingMortaredGraniteSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingMortaredGraniteSignItem\">Large Hanging Mortared Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:171\"><b><link=\"Item:LargeHangingMortaredLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingMortaredLimestoneSignItem\">Large Hanging Mortared Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:514\"><b><link=\"Item:LargeHangingMortaredSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingMortaredSandstoneSignItem\">Large Hanging Mortared Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2313\"><b><link=\"Item:LargeHangingMortaredStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingMortaredStoneSignItem\">Large Hanging Mortared Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1814\"><b><link=\"Item:LargeHangingOakSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingOakSignItem\">Large Hanging Oak Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1769\"><b><link=\"Item:LargeHangingPalmSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingPalmSignItem\">Large Hanging Palm Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1934\"><b><link=\"Item:LargeHangingRedwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingRedwoodSignItem\">Large Hanging Redwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:56\"><b><link=\"Item:LargeHangingSaguaroSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingSaguaroSignItem\">Large Hanging Saguaro Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1791\"><b><link=\"Item:LargeHangingSoftwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingSoftwoodSignItem\">Large Hanging Softwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:185\"><b><link=\"Item:LargeHangingSpruceSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingSpruceSignItem\">Large Hanging Spruce Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2687\"><b><link=\"Item:LargeHangingStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeHangingStoneSignItem\">Large Hanging Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1739\"><b><link=\"Item:LargeStandingAshlarBasaltSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarBasaltSignItem\">Large Standing Ashlar Basalt Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:885\"><b><link=\"Item:LargeStandingAshlarGneissSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarGneissSignItem\">Large Standing Ashlar Gneiss Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:659\"><b><link=\"Item:LargeStandingAshlarGraniteSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarGraniteSignItem\">Large Standing Ashlar Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:70\"><b><link=\"Item:LargeStandingAshlarLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarLimestoneSignItem\">Large Standing Ashlar Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1369\"><b><link=\"Item:LargeStandingAshlarSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarSandstoneSignItem\">Large Standing Ashlar Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2103\"><b><link=\"Item:LargeStandingAshlarShaleSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarShaleSignItem\">Large Standing Ashlar Shale Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:904\"><b><link=\"Item:LargeStandingAshlarStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingAshlarStoneSignItem\">Large Standing Ashlar Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1600\"><b><link=\"Item:LargeStandingBirchSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingBirchSignItem\">Large Standing Birch Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1428\"><b><link=\"Item:LargeStandingCedarSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingCedarSignItem\">Large Standing Cedar Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1467\"><b><link=\"Item:LargeStandingCeibaSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingCeibaSignItem\">Large Standing Ceiba Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2866\"><b><link=\"Item:LargeStandingFirSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingFirSignItem\">Large Standing Fir Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2496\"><b><link=\"Item:LargeStandingHardwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingHardwoodSignItem\">Large Standing Hardwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2368\"><b><link=\"Item:LargeStandingJoshuaSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingJoshuaSignItem\">Large Standing Joshua Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2683\"><b><link=\"Item:LargeStandingLumberSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingLumberSignItem\">Large Standing Lumber Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1205\"><b><link=\"Item:LargeStandingMortaredGraniteSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingMortaredGraniteSignItem\">Large Standing Mortared Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1697\"><b><link=\"Item:LargeStandingMortaredLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingMortaredLimestoneSignItem\">Large Standing Mortared Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2066\"><b><link=\"Item:LargeStandingMortaredSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingMortaredSandstoneSignItem\">Large Standing Mortared Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:100\"><b><link=\"Item:LargeStandingMortaredStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingMortaredStoneSignItem\">Large Standing Mortared Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:365\"><b><link=\"Item:LargeStandingOakSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingOakSignItem\">Large Standing Oak Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2177\"><b><link=\"Item:LargeStandingPalmSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingPalmSignItem\">Large Standing Palm Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2239\"><b><link=\"Item:LargeStandingRedwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingRedwoodSignItem\">Large Standing Redwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2869\"><b><link=\"Item:LargeStandingSaguaroSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingSaguaroSignItem\">Large Standing Saguaro Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1364\"><b><link=\"Item:LargeStandingSoftwoodSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingSoftwoodSignItem\">Large Standing Softwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1119\"><b><link=\"Item:LargeStandingSpruceSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingSpruceSignItem\">Large Standing Spruce Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1569\"><b><link=\"Item:LargeStandingStoneSignItem\"><style=\"Item\"><ecoicon item=\"LargeStandingStoneSignItem\">Large Standing Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2887\"><b><link=\"Item:SmallHangingAshlarBasaltSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarBasaltSignItem\">Small Hanging Ashlar Basalt Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:252\"><b><link=\"Item:SmallHangingAshlarGneissSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarGneissSignItem\">Small Hanging Ashlar Gneiss Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:908\"><b><link=\"Item:SmallHangingAshlarGraniteSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarGraniteSignItem\">Small Hanging Ashlar Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2791\"><b><link=\"Item:SmallHangingAshlarLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarLimestoneSignItem\">Small Hanging Ashlar Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2521\"><b><link=\"Item:SmallHangingAshlarSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarSandstoneSignItem\">Small Hanging Ashlar Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2900\"><b><link=\"Item:SmallHangingAshlarShaleSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarShaleSignItem\">Small Hanging Ashlar Shale Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1693\"><b><link=\"Item:SmallHangingAshlarStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingAshlarStoneSignItem\">Small Hanging Ashlar Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2435\"><b><link=\"Item:SmallHangingBirchSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingBirchSignItem\">Small Hanging Birch Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2014\"><b><link=\"Item:SmallHangingCedarSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingCedarSignItem\">Small Hanging Cedar Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1903\"><b><link=\"Item:SmallHangingCeibaSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingCeibaSignItem\">Small Hanging Ceiba Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:180\"><b><link=\"Item:SmallHangingFirSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingFirSignItem\">Small Hanging Fir Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2668\"><b><link=\"Item:SmallHangingHardwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingHardwoodSignItem\">Small Hanging Hardwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2301\"><b><link=\"Item:SmallHangingJoshuaSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingJoshuaSignItem\">Small Hanging Joshua Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:655\"><b><link=\"Item:SmallHangingLumberSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingLumberSignItem\">Small Hanging Lumber Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1020\"><b><link=\"Item:SmallHangingMortaredGraniteSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingMortaredGraniteSignItem\">Small Hanging Mortared Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2084\"><b><link=\"Item:SmallHangingMortaredLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingMortaredLimestoneSignItem\">Small Hanging Mortared Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2182\"><b><link=\"Item:SmallHangingMortaredSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingMortaredSandstoneSignItem\">Small Hanging Mortared Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1581\"><b><link=\"Item:SmallHangingMortaredStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingMortaredStoneSignItem\">Small Hanging Mortared Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2344\"><b><link=\"Item:SmallHangingOakSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingOakSignItem\">Small Hanging Oak Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2303\"><b><link=\"Item:SmallHangingPalmSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingPalmSignItem\">Small Hanging Palm Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:298\"><b><link=\"Item:SmallHangingRedwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingRedwoodSignItem\">Small Hanging Redwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2098\"><b><link=\"Item:SmallHangingSaguaroSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingSaguaroSignItem\">Small Hanging Saguaro Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1947\"><b><link=\"Item:SmallHangingSoftwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingSoftwoodSignItem\">Small Hanging Softwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2859\"><b><link=\"Item:SmallHangingSpruceSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingSpruceSignItem\">Small Hanging Spruce Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:866\"><b><link=\"Item:SmallHangingStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallHangingStoneSignItem\">Small Hanging Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:798\"><b><link=\"Item:SmallStandingAshlarBasaltSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarBasaltSignItem\">Small Standing Ashlar Basalt Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2796\"><b><link=\"Item:SmallStandingAshlarGneissSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarGneissSignItem\">Small Standing Ashlar Gneiss Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1839\"><b><link=\"Item:SmallStandingAshlarGraniteSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarGraniteSignItem\">Small Standing Ashlar Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:62\"><b><link=\"Item:SmallStandingAshlarLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarLimestoneSignItem\">Small Standing Ashlar Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:765\"><b><link=\"Item:SmallStandingAshlarSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarSandstoneSignItem\">Small Standing Ashlar Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2914\"><b><link=\"Item:SmallStandingAshlarShaleSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarShaleSignItem\">Small Standing Ashlar Shale Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1669\"><b><link=\"Item:SmallStandingAshlarStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingAshlarStoneSignItem\">Small Standing Ashlar Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2752\"><b><link=\"Item:SmallStandingBirchSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingBirchSignItem\">Small Standing Birch Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2804\"><b><link=\"Item:SmallStandingCedarSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingCedarSignItem\">Small Standing Cedar Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:227\"><b><link=\"Item:SmallStandingCeibaSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingCeibaSignItem\">Small Standing Ceiba Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:407\"><b><link=\"Item:SmallStandingFirSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingFirSignItem\">Small Standing Fir Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2581\"><b><link=\"Item:SmallStandingHardwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingHardwoodSignItem\">Small Standing Hardwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:464\"><b><link=\"Item:SmallStandingJoshuaSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingJoshuaSignItem\">Small Standing Joshua Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:592\"><b><link=\"Item:SmallStandingLumberSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingLumberSignItem\">Small Standing Lumber Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:781\"><b><link=\"Item:SmallStandingMortaredGraniteSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingMortaredGraniteSignItem\">Small Standing Mortared Granite Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1595\"><b><link=\"Item:SmallStandingMortaredLimestoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingMortaredLimestoneSignItem\">Small Standing Mortared Limestone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:598\"><b><link=\"Item:SmallStandingMortaredSandstoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingMortaredSandstoneSignItem\">Small Standing Mortared Sandstone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2029\"><b><link=\"Item:SmallStandingMortaredStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingMortaredStoneSignItem\">Small Standing Mortared Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2574\"><b><link=\"Item:SmallStandingOakSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingOakSignItem\">Small Standing Oak Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:367\"><b><link=\"Item:SmallStandingPalmSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingPalmSignItem\">Small Standing Palm Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2602\"><b><link=\"Item:SmallStandingRedwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingRedwoodSignItem\">Small Standing Redwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:225\"><b><link=\"Item:SmallStandingSaguaroSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingSaguaroSignItem\">Small Standing Saguaro Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1878\"><b><link=\"Item:SmallStandingSoftwoodSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingSoftwoodSignItem\">Small Standing Softwood Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:589\"><b><link=\"Item:SmallStandingSpruceSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingSpruceSignItem\">Small Standing Spruce Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:12\"><b><link=\"Item:SmallStandingStoneSignItem\"><style=\"Item\"><ecoicon item=\"SmallStandingStoneSignItem\">Small Standing Stone Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:468\"><b><link=\"Item:StandingGlassSignItem\"><style=\"Item\"><ecoicon item=\"StandingGlassSignItem\">Standing Glass Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1865\"><b><link=\"Item:StandingLongSteelSignItem\"><style=\"Item\"><ecoicon item=\"StandingLongSteelSignItem\">Standing Long Steel Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2528\"><b><link=\"Item:StandingSteelBrickSignItem\"><style=\"Item\"><ecoicon item=\"StandingSteelBrickSignItem\">Standing Steel Brick Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:961\"><b><link=\"Item:StopSignItem\"><style=\"Item\"><ecoicon item=\"StopSignItem\">Stop Sign</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1098\"><b><link=\"Item:StreetSignItem\"><style=\"Item\"><ecoicon item=\"StreetSignItem\">Street Sign</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingMortaredGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingSoftwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingOakSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarBasaltSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingJoshuaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarShaleSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingMortaredStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingSaguaroSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingHardwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HangingSteelFramedSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingRedwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingPalmSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingCedarSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingPalmSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingCedarSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarBasaltSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HangingSteelMineSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingMortaredGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingLumberSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingCeibaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingFirSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingFirSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingCeibaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarGneissSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingSoftwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingRedwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StopSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StreetSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingMortaredLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingJoshuaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarBasaltSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingSoftwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingLumberSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingMortaredSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingOakSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingCedarSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingBirchSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarGneissSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StandingGlassSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingMortaredSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingMortaredLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingMortaredStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingSpruceSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingMortaredSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingFirSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HangingSteelShopSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingHardwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingRedwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingCeibaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StandingLongSteelSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarShaleSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingMortaredLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingPalmSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingSpruceSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingHardwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingSpruceSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingRedwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingLumberSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingMortaredGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingMortaredStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StandingSteelBrickSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingMortaredSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingSpruceSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingHardwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingSoftwoodSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingCedarSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingBirchSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingAshlarLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingBirchSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingJoshuaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingCeibaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingSaguaroSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarGneissSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingJoshuaSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HangingLongSteelSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingMortaredGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingOakSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingSaguaroSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarGraniteSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarSandstoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingPalmSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingBirchSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingMortaredLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingSaguaroSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarBasaltSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.HangingSteelPlainSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarShaleSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingMortaredStoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarShaleSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingFirSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingOakSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStandingAshlarGneissSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallHangingAshlarLimestoneSignItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeHangingLumberSignItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"OpenAction\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"OpenAction\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"OpenAction\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2223\"><ecoicon item=\"District\"><color=#FFFFFFFF>Government 67</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 39</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Government infrastructure 39",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Government 67",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 3",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CreateWorkOrder"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<b><link=\"TypeTooltip:1162\"><b><link=\"Item:PoweredCartJaguarItem\"><style=\"Item\"><ecoicon item=\"PoweredCartJaguarItem\">Powered Cart Jaguar</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PoweredCartJaguarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WoodCartJaguarItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallWoodCartJaguarItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 4",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Constructable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Construction",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.AddToWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Ingredient Added",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Ingredient",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.LaborWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborProfession",
+                    "propDisplayName": "Labor Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborSkill",
+                    "propDisplayName": "Labor Skill",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "AuthorizedOrNot": "NotOwnerOfProperty"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnOwnedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "ChangeOtherPlayersLand",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 5",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Change"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Change Other Players Land",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "ChangeOtherPlayersLand",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Add Item Other Players Inventorry",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "AddItemToOtherPlayersInventorry",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "AddToOtherPlayersWorkOrder",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "AddToOtherPlayersWorkOrder",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 6",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.InventoryAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Moved",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Storage Container",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Storage Container",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "AuthorizedOrNot": "NotOwnerOfProperty"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "AddItemToOtherPlayersInventorry",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 7",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.AddToWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Ingredient Added",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Ingredient",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.AddToWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.LaborWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborProfession",
+                    "propDisplayName": "Labor Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborSkill",
+                    "propDisplayName": "Labor Skill",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "AuthorizedOrNot": "NotOwnerOfProperty"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "AddToOtherPlayersWorkOrder",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

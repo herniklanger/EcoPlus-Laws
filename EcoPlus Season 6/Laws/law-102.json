@@ -1,0 +1,1436 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Ages",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Iron Age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "6 NotAllowedInInventories Skills",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MillingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmeltingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CookingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PotterySkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FertilizersSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GlassworkingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Industrial Age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<b><link=\"TypeTooltip:2239\"><b><link=\"Item:MechanicsSkill\"><style=\"Item\"><ecoicon item=\"Mechanics\">Mechanics</ecoicon></style></link></b></link></b>, <b><link=\"TypeTooltip:1495\"><b><link=\"Item:FertilizersSkill\"><style=\"Item\"><ecoicon item=\"Fertilizers\">Fertilizers</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IndustrySkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MechanicsSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedSmeltingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ElectronicsSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 2.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Technological Age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "5 NotAllowedInInventories Skills",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.OilDrillingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 3.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Modern Age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "4 NotAllowedInInventories Skills",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CuttingEdgeCookingSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositesSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedMasonrySkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 4.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Age Check",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": ""
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Age"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "LessThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "We are in the Stone Age",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "We are in the Iron Age",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 2.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "We are in the Industrial Age",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "CurrentAges",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "TripleLegatus",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 3.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "We are in the Modern Age!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Advance Age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": "#Admin"
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Advance age"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:7\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Government Officials</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Government Officials",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "CurrentAges",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "TripleLegatus",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "We have entered a new age of technology!",
+                      "NotificationType": "OnScreenNotice",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Revert age",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": "#Admin"
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Revert age"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:7\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Government Officials</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Government Officials",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "CurrentAges",
+                      "Person": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Players.User",
+                          "name": "TripleLegatus",
+                          "reference": true
+                        }
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": -1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Admin Chat Provension",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": "#Admin"
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": null
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:7\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Government Officials</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Government Officials",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 9",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CreateWorkOrder"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "<foldout><linktext><u>24 Skill Books</u></linktext><title>24 Skill Books</title><b><link=\"TypeTooltip:2121\"><b><link=\"Item:AdvancedBakingSkillBook\"><style=\"Item\"><ecoicon item=\"AdvancedBakingSkillBook\">Advanced Baking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:221\"><b><link=\"Item:AdvancedCookingSkillBook\"><style=\"Item\"><ecoicon item=\"AdvancedCookingSkillBook\">Advanced Cooking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1300\"><b><link=\"Item:AdvancedMasonrySkillBook\"><style=\"Item\"><ecoicon item=\"AdvancedMasonrySkillBook\">Advanced Masonry Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2245\"><b><link=\"Item:AdvancedSmeltingSkillBook\"><style=\"Item\"><ecoicon item=\"AdvancedSmeltingSkillBook\">Advanced Smelting Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1635\"><b><link=\"Item:BakingSkillBook\"><style=\"Item\"><ecoicon item=\"BakingSkillBook\">Baking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:975\"><b><link=\"Item:BasicEngineeringSkillBook\"><style=\"Item\"><ecoicon item=\"BasicEngineeringSkillBook\">Basic Engineering Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:634\"><b><link=\"Item:ButcherySkillBook\"><style=\"Item\"><ecoicon item=\"ButcherySkillBook\">Butchery Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1858\"><b><link=\"Item:CarpentrySkillBook\"><style=\"Item\"><ecoicon item=\"CarpentrySkillBook\">Carpentry Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1362\"><b><link=\"Item:CompositesSkillBook\"><style=\"Item\"><ecoicon item=\"CompositesSkillBook\">Composites Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2312\"><b><link=\"Item:CookingSkillBook\"><style=\"Item\"><ecoicon item=\"CookingSkillBook\">Cooking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1746\"><b><link=\"Item:CuttingEdgeCookingSkillBook\"><style=\"Item\"><ecoicon item=\"CuttingEdgeCookingSkillBook\">Cutting Edge Cooking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2127\"><b><link=\"Item:ElectronicsSkillBook\"><style=\"Item\"><ecoicon item=\"ElectronicsSkillBook\">Electronics Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:805\"><b><link=\"Item:FarmingSkillBook\"><style=\"Item\"><ecoicon item=\"FarmingSkillBook\">Farming Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1755\"><b><link=\"Item:FertilizersSkillBook\"><style=\"Item\"><ecoicon item=\"FertilizersSkillBook\">Fertilizers Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2180\"><b><link=\"Item:GlassworkingSkillBook\"><style=\"Item\"><ecoicon item=\"GlassworkingSkillBook\">Glassworking Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:659\"><b><link=\"Item:IndustrySkillBook\"><style=\"Item\"><ecoicon item=\"IndustrySkillBook\">Industry Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:809\"><b><link=\"Item:MasonrySkillBook\"><style=\"Item\"><ecoicon item=\"MasonrySkillBook\">Masonry Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1814\"><b><link=\"Item:MechanicsSkillBook\"><style=\"Item\"><ecoicon item=\"MechanicsSkillBook\">Mechanics Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:637\"><b><link=\"Item:MillingSkillBook\"><style=\"Item\"><ecoicon item=\"MillingSkillBook\">Milling Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2144\"><b><link=\"Item:OilDrillingSkillBook\"><style=\"Item\"><ecoicon item=\"OilDrillingSkillBook\">Oil Drilling Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1632\"><b><link=\"Item:PaperMillingSkillBook\"><style=\"Item\"><ecoicon item=\"PaperMillingSkillBook\">Paper Milling Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:995\"><b><link=\"Item:PotterySkillBook\"><style=\"Item\"><ecoicon item=\"PotterySkillBook\">Pottery Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2330\"><b><link=\"Item:SmeltingSkillBook\"><style=\"Item\"><ecoicon item=\"SmeltingSkillBook\">Smelting Skill Book</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:251\"><b><link=\"Item:TailoringSkillBook\"><style=\"Item\"><ecoicon item=\"TailoringSkillBook\">Tailoring Skill Book</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PotterySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedMasonrySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CookingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ElectronicsSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PaperMillingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GlassworkingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ButcherySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MechanicsSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmeltingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FertilizersSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IndustrySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasicEngineeringSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedCookingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CompositesSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedSmeltingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.AdvancedBakingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FarmingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CuttingEdgeCookingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CarpentrySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.OilDrillingSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MasonrySkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TailoringSkillScroll"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MillingSkillScroll"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ResearchTableItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

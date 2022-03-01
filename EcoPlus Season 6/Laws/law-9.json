@@ -1,0 +1,667 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Chat command",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 3",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": ""
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Trees"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Logging Permit:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LoggingPermit",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Tree Planted:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "TreePlanted",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CurrentTimeBlock",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Loggin:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\r\n\r\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\r\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.TextFormula",
+                        "properties": {
+                          "Formula": "TreePlanted+LoggingPermit",
+                          "Variables": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "TreePlanted",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "TreePlanted",
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 0.0
+                                    },
+                                    "TimeRangeType": "CurrentTimeBlock",
+                                    "User": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\r\n\r\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\r\n"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.NamedVariable",
+                              "reference": false,
+                              "properties": {
+                                "Name": "LoggingPermit",
+                                "Definition": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                                  "properties": {
+                                    "CustomStatName": "LoggingPermit",
+                                    "TimeRangeInHours": {
+                                      "type": "GameValueWrapper",
+                                      "value": 24.0
+                                    },
+                                    "TimeRangeType": "CountBackFromPresentTime",
+                                    "User": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\r\n\r\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\r\n"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 4",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": ""
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Tree Planted"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Tree Planted:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "TreePlanted",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CurrentTimeBlock",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 5",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": ""
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Tree Permit"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Logging Permit:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "LoggingPermit",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 24.0
+                          },
+                          "TimeRangeType": "CountBackFromPresentTime",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 6",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": ""
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Debt"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Your Debt:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                        "properties": {
+                          "CustomStatName": "Debt",
+                          "TimeRangeInHours": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          },
+                          "TimeRangeType": "CurrentTimeBlock",
+                          "User": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          }
+                        }
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 8",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChatSent"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Tag",
+                    "propDisplayName": "Tag",
+                    "properties": {
+                      "String": null
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectString",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChatSent",
+                    "propNameBacker": "Message",
+                    "propDisplayName": "Message",
+                    "properties": {
+                      "String": "!Day"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "The server day is:",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInDays",
+                        "properties": {}
+                      },
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "contextName": "Citizen",
+                                      "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                                    },
+                                    "Skills": {
+                                      "type": "GamePickerList",
+                                      "mustDeriveType": {
+                                        "type": "Type",
+                                        "value": "Eco.Gameplay.Skills.Skill"
+                                      },
+                                      "requiredTag": null,
+                                      "internalDescription": "<b><link=\"TypeTooltip:1447\"><b><link=\"Item:LoggingSkill\"><style=\"Item\"><ecoicon item=\"LoggingSkill\">Logging</ecoicon></style></link></b></link></b>",
+                                      "entries": [
+                                        {
+                                          "type": "Type",
+                                          "value": "Eco.Mods.TechTree.LoggingSkill"
+                                        }
+                                      ]
+                                    },
+                                    "Requirements": "HasAny",
+                                    "RequiredLevel": {
+                                      "type": "GameValueWrapper",
+                                      "value": 1.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.SendNotice",
+                              "reference": false,
+                              "properties": {
+                                "Message": "Active logging is Zone:",
+                                "NotificationType": "SideBarMessage",
+                                "PeopleToSendTo": {
+                                  "type": "GameValueContext",
+                                  "contextName": "Citizen",
+                                  "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                  "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                                },
+                                "ValueToDisplay": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                  "properties": {
+                                    "LeftNumber": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInDays",
+                                      "properties": {}
+                                    },
+                                    "Operation": "Modulus",
+                                    "RightNumber": {
+                                      "type": "GameValueWrapper",
+                                      "value": 6.0
+                                    }
+                                  }
+                                },
+                                "LocationToDisplay": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

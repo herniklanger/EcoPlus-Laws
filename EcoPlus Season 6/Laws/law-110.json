@@ -1,0 +1,1914 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Zoning Restriction",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Mining Zone",
+          "UserDescription": "This larw provents eany framing aktivites",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlowField"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlowField",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Plow",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>5 Districts</u></linktext><title>5 Districts</title><b><link=\"ref:District:2239\"><ecoicon item=\"District\"><color=#00F0FFFF>City Industry 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2238\"><ecoicon item=\"District\"><color=#09CFD2FF>City Production 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2241\"><ecoicon item=\"District\"><color=#A07392FF>Gov Complex 4</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2236\"><ecoicon item=\"District\"><color=#3A7122FF>Logging Town 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Industry 6",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logging Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Mining Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Production 6",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Gov Complex 4",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Your not allowed to plow here!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Farming Restriction",
+          "UserDescription": "Update to proper District",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlantSeeds"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.PlantSpecies"
+                        },
+                        "requiredTag": "Plants",
+                        "internalDescription": "All Tree Plant Species",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Pumpkin+PumpkinSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Fern+FernSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Fireweed+FireweedSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Wheat+WheatSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.AmanitaMushroom+AmanitaMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Rice+RiceSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Taro+TaroSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.BoleteMushroom+BoleteMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.CriminiMushroom+CriminiMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Papaya+PapayaSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Corn+CornSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.CookeinaMushroom+CookeinaMushroomSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Beets+BeetsSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Camas+CamasSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Tomatoes+TomatoesSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Pineapple+PineappleSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.PricklyPear+PricklyPearSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Huckleberry+HuckleberrySpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Agave+AgaveSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Beans+BeansSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Cotton+CottonSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Buttonbush+ButtonbushSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Planter",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"TypeTooltip:1979\"><b><link=\"Item:FarmerSkill\"><style=\"Item\"><ecoicon item=\"FarmerSkill\">Farmer</ecoicon></style></link></b></link></b>  <b><link=\"TypeTooltip:2216\"><b><link=\"Item:GatheringSkill\"><style=\"Item\"><ecoicon item=\"GatheringSkill\">Gathering</ecoicon></style></link></b></link></b>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.GatheringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FarmerSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasNone",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Only farmers can plant seeds!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlantSeeds\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlantSeeds\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlantSeeds\">Action Location</ecoicon>: The position of the new plant.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>4 Districts</u></linktext><title>4 Districts</title><b><link=\"ref:District:2239\"><ecoicon item=\"District\"><color=#00F0FFFF>City Industry 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2238\"><ecoicon item=\"District\"><color=#09CFD2FF>City Production 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2236\"><ecoicon item=\"District\"><color=#3A7122FF>Logging Town 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Industry 6",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logging Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Mining Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Production 6",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "You can't plant seeds here!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Teree planting restriction",
+          "UserDescription": "Update to proper District",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlantSeeds"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.PlantSpecies"
+                        },
+                        "requiredTag": "Plants",
+                        "internalDescription": "All Tree Plant Species",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Fir+FirSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Oak+OakSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Birch+BirchSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.OldGrowthRedwood+OldGrowthRedwoodSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Joshua+JoshuaSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.SaguaroCactus+SaguaroCactusSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Palm+PalmSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Cedar+CedarSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Spruce+SpruceSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Redwood+RedwoodSpecies"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.Organisms.Ceiba+CeibaSpecies"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Planter",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlantSeeds\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlantSeeds\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlantSeeds\">Action Location</ecoicon>: The position of the new plant.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>4 Districts</u></linktext><title>4 Districts</title><b><link=\"ref:District:2239\"><ecoicon item=\"District\"><color=#00F0FFFF>City Industry 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2238\"><ecoicon item=\"District\"><color=#09CFD2FF>City Production 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2236\"><ecoicon item=\"District\"><color=#3A7122FF>Logging Town 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Industry 6",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logging Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Mining Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Production 6",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"TypeTooltip:1181\"><b><link=\"Item:LoggingSkill\"><style=\"Item\"><ecoicon item=\"LoggingSkill\">Logging</ecoicon></style></link></b></link></b>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.LoggingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasNone",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Only loggers can plant seeds in the wild",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen planting the plant.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Industry",
+          "UserDescription": "Update to proper District",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>5 World Objects</u></linktext><title>5 World Objects</title><b><link=\"TypeTooltip:2677\"><b><link=\"Item:BlastFurnaceItem\"><style=\"Item\"><ecoicon item=\"BlastFurnaceItem\">Blast Furnace</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2657\"><b><link=\"Item:BloomeryItem\"><style=\"Item\"><ecoicon item=\"BloomeryItem\">Bloomery</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1622\"><b><link=\"Item:CementKilnItem\"><style=\"Item\"><ecoicon item=\"CementKilnItem\">Cement Kiln</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:194\"><b><link=\"Item:LaboratoryItem\"><style=\"Item\"><ecoicon item=\"LaboratoryItem\">Laboratory</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2872\"><b><link=\"Item:OilRefineryItem\"><style=\"Item\"><ecoicon item=\"OilRefineryItem\">Oil Refinery</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BlastFurnaceItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BloomeryItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.OilRefineryItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CementKilnItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LaboratoryItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:District:2239\"><ecoicon item=\"District\"><color=#00F0FFFF>City Industry 6</color></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Industry 6",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "This can only be placed in a industry plot",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Mining plot",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>6 World Objects</u></linktext><title>6 World Objects</title><b><link=\"TypeTooltip:1336\"><b><link=\"Item:ArrastraItem\"><style=\"Item\"><ecoicon item=\"ArrastraItem\">Arrastra</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1066\"><b><link=\"Item:FrothFloatationCellItem\"><style=\"Item\"><ecoicon item=\"FrothFloatationCellItem\">Froth Floatation Cell</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1478\"><b><link=\"Item:JawCrusherItem\"><style=\"Item\"><ecoicon item=\"JawCrusherItem\">Jaw Crusher</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1714\"><b><link=\"Item:RockerBoxItem\"><style=\"Item\"><ecoicon item=\"RockerBoxItem\">Rocker Box</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:747\"><b><link=\"Item:ScreeningMachineItem\"><style=\"Item\"><ecoicon item=\"ScreeningMachineItem\">Screening Machine</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1413\"><b><link=\"Item:StampMillItem\"><style=\"Item\"><ecoicon item=\"StampMillItem\">Stamp Mill</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.FrothFloatationCellItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StampMillItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ScreeningMachineItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SensorBasedBeltSorterItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.RockerBoxItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.JawCrusherItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ArrastraItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Mining Town 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "This can only be placed in plot in mining town",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Talings",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.InventoryAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Moved",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<b><link=\"TypeTooltip:277\"><b><link=\"Item:TailingsItem\"><style=\"Item\"><ecoicon item=\"TailingsItem\">Tailings</ecoicon></style></link></b></link></b>  <b><link=\"TypeTooltip:678\"><b><link=\"Item:WetTailingsItem\"><style=\"Item\"><ecoicon item=\"WetTailingsItem\">Wet Tailings</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TailingsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WetTailingsItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Storage Container",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Storage Container",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "Put",
+                        "titleBacking": "<ecoicon item=\"InventoryAction\">Put</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"InventoryAction\">Put</ecoicon> value of the event will be used.\n\n<ecoicon item=\"InventoryAction\">Put</ecoicon>: Were the items taken or put?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"InventoryAction\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"InventoryAction\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"InventoryAction\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2211\"><ecoicon item=\"District\"><color=#1C96DDFF>Iron Mine 97</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Iron Mine 97",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Mining Town 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Tailings can only be stored in the mines!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Talings",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<b><link=\"TypeTooltip:277\"><b><link=\"Item:TailingsItem\"><style=\"Item\"><ecoicon item=\"TailingsItem\">Tailings</ecoicon></style></link></b></link></b>  <b><link=\"TypeTooltip:678\"><b><link=\"Item:WetTailingsItem\"><style=\"Item\"><ecoicon item=\"WetTailingsItem\">Wet Tailings</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TailingsItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WetTailingsItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "Dropped",
+                        "titleBacking": "<ecoicon item=\"DropOrPickupBlock\">Dropped</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"DropOrPickupBlock\">Dropped</ecoicon> value of the event will be used.\n\n<ecoicon item=\"DropOrPickupBlock\">Dropped</ecoicon>: Was the block dropped or picked up?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Tailings need to be kept in stockpiles!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Logging plot",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<b><link=\"TypeTooltip:1402\"><b><link=\"Item:CarpentryTableItem\"><style=\"Item\"><ecoicon item=\"CarpentryTableItem\">Carpentry Table</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SawmillItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2238\"><ecoicon item=\"District\"><color=#09CFD2FF>City Production 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2236\"><ecoicon item=\"District\"><color=#3A7122FF>Logging Town 2</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Logging Town 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Production 6",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "Can only be placed in Logging or Production Plots",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 9",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>4 World Objects</u></linktext><title>4 World Objects</title><b><link=\"TypeTooltip:1543\"><b><link=\"Item:CombustionGeneratorItem\"><style=\"Item\"><ecoicon item=\"CombustionGeneratorItem\">Combustion Generator</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2170\"><b><link=\"Item:SolarGeneratorItem\"><style=\"Item\"><ecoicon item=\"SolarGeneratorItem\">Solar Generator</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2081\"><b><link=\"Item:SteamEngineItem\"><style=\"Item\"><ecoicon item=\"SteamEngineItem\">Steam Engine</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:807\"><b><link=\"Item:WindTurbineItem\"><style=\"Item\"><ecoicon item=\"WindTurbineItem\">Wind Turbine</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SolarGeneratorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CombustionGeneratorItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SteamEngineItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.WindTurbineItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 39</color></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Government infrastructure 39",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

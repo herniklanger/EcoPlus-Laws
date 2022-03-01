@@ -1,0 +1,198 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Reclaming property",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 1",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DemographicChange"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DemographicChange",
+                    "propNameBacker": "Demographic",
+                    "propDisplayName": "Demographic",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<b><link=\"ref:Demographic:23\"><ecoicon item=\"Demographic\"><style=\"Government\">Inactive</style></ecoicon></link></b>",
+                        "entries": [
+                          {
+                            "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                            "name": "Inactive",
+                            "reference": true
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:AppointedTitle:10\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">On Vacation</style></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "On Vacation",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "EnteringDemographic",
+                        "titleBacking": "<ecoicon item=\"DemographicChange\">Entering Demographic</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"DemographicChange\">Entering Demographic</ecoicon> value of the event will be used.\n\n<ecoicon item=\"DemographicChange\">Entering Demographic</ecoicon>: Did The citizen become part of the demographic, or stop being part?\n"
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.ChangePropertyOwner_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "Property": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PropertyValues.AllProperty",
+                        "reference": false,
+                        "properties": {
+                          "CurrentlyOwnedByCitizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen currently being processed for the timer event.\n"
+                          },
+                          "IgnorePropertyWithMulitpleOwners": true
+                        }
+                      },
+                      "NewOwner": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                          "name": "Plot Management",
+                          "reference": true
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Tax_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "TargetBankAccount": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                          "name": "Treasury Bank Account",
+                          "reference": true
+                        }
+                      },
+                      "Target": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Gold Coin",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                        "properties": {
+                          "Currency": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Economy.Currency",
+                              "name": "Gold Coin",
+                              "reference": true
+                            }
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                          }
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

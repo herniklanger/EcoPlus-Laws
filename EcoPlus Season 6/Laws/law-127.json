@@ -1,0 +1,222 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Law 115",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 2",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.TransferMoney"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "SourceBankAccount",
+                    "propDisplayName": "Source Bank Account",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.BankAccount"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "TargetBankAccount",
+                    "propDisplayName": "Target Bank Account",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.BankAccount"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.TransferMoney",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Not",
+                        "properties": {
+                          "NotValue": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.CurrencyRequirements",
+                            "properties": {
+                              "Currency": {
+                                "type": "GameValueContext",
+                                "contextName": "Currency",
+                                "titleBacking": "<ecoicon item=\"TransferMoney\">Currency</ecoicon>",
+                                "tooltip": "When triggered, the <ecoicon item=\"TransferMoney\">Currency</ecoicon> value of the event will be used.\n\n<ecoicon item=\"TransferMoney\">Currency</ecoicon>: The currency of the transfer.\n"
+                              },
+                              "MatchesCurrency": {
+                                "type": "GamePickerList",
+                                "mustDeriveType": {
+                                  "type": "Type",
+                                  "value": "Eco.Gameplay.Economy.Currency"
+                                },
+                                "requiredTag": null,
+                                "internalDescription": "<b><link=\"ref:Currency:8\"><ecoicon item=\"CurrencySymbol\"><style=\"Currency\">Gold Coin</style></ecoicon></link></b>  <b><link=\"ref:Currency:7\"><ecoicon item=\"CurrencySymbol\"><style=\"Currency\">Housing Token</style></ecoicon></link></b>",
+                                "entries": [
+                                  {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Gold Coin",
+                                    "reference": true
+                                  },
+                                  {
+                                    "type": "Eco.Gameplay.Economy.Currency",
+                                    "name": "Housing Token",
+                                    "reference": true
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 4",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.BarterTrade"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.BarterTrade",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Bartered",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
