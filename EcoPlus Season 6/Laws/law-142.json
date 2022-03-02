@@ -90,16 +90,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2227\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 107</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2228\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 108</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2340\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 115</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2341\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 116</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 108",
+                                "name": "Farmers Market 116",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 107",
+                                "name": "Farmers Market 115",
                                 "reference": true
                               }
                             ]
@@ -232,21 +232,21 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2232\"><ecoicon item=\"District\"><color=#872B8DFF>Cooking 2 plot 41</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2229\"><ecoicon item=\"District\"><color=#631E7EFF>Cooking 54</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2217\"><ecoicon item=\"District\"><color=#320541FF>Cooking Plot 86</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2345\"><ecoicon item=\"District\"><color=#872B8DFF>Cooking 2 plot 45</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2342\"><ecoicon item=\"District\"><color=#631E7EFF>Cooking 58</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2330\"><ecoicon item=\"District\"><color=#320541FF>Cooking Plot 90</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Cooking 54",
+                                "name": "Cooking 58",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Cooking 2 plot 41",
+                                "name": "Cooking Plot 90",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Cooking Plot 86",
+                                "name": "Cooking 2 plot 45",
                                 "reference": true
                               }
                             ]
@@ -391,11 +391,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<b><link=\"ref:District:2215\"><ecoicon item=\"District\"><color=#753B0DFF>Logging Plot 86</color></ecoicon></link></b>",
+                            "internalDescription": "<b><link=\"ref:District:2328\"><ecoicon item=\"District\"><color=#753B0DFF>Logging Plot 90</color></ecoicon></link></b>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Logging Plot 86",
+                                "name": "Logging Plot 90",
                                 "reference": true
                               }
                             ]
@@ -524,11 +524,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<b><link=\"ref:District:2216\"><ecoicon item=\"District\"><color=#E50202FF>Mining Plot 86</color></ecoicon></link></b>",
+                            "internalDescription": "<b><link=\"ref:District:2329\"><ecoicon item=\"District\"><color=#E50202FF>Mining Plot 90</color></ecoicon></link></b>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Mining Plot 86",
+                                "name": "Mining Plot 90",
                                 "reference": true
                               }
                             ]
@@ -3207,16 +3207,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2227\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 107</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2228\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 108</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2340\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 115</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2341\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 116</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 108",
+                                "name": "Farmers Market 116",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 107",
+                                "name": "Farmers Market 115",
                                 "reference": true
                               }
                             ]
@@ -3308,12 +3308,12 @@
               "properties": {
                 "Trigger": {
                   "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.CreateWorkOrder"
+                  "value": "Eco.Gameplay.GameActions.PostedWorkParty"
                 },
                 "Configs": [
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PostedWorkParty",
                     "propNameBacker": "Currency",
                     "propDisplayName": "Currency",
                     "properties": {
@@ -3324,60 +3324,6 @@
                           "value": "Eco.Gameplay.Economy.Currency"
                         },
                         "requiredTag": null,
-                        "internalDescription": "Any",
-                        "entries": []
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
-                    "propNameBacker": "CraftedItem",
-                    "propDisplayName": "Crafted Item",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.Item"
-                        },
-                        "requiredTag": "Product",
-                        "internalDescription": "Any",
-                        "entries": []
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
-                    "propNameBacker": "Byproduct",
-                    "propDisplayName": "Byproduct",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.Item"
-                        },
-                        "requiredTag": "Product",
-                        "internalDescription": "Any",
-                        "entries": []
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.CreateWorkOrder",
-                    "propNameBacker": "WorldObjectItem",
-                    "propDisplayName": "Crafting Table",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.Item"
-                        },
-                        "requiredTag": "Crafting Table",
                         "internalDescription": "Any",
                         "entries": []
                       }
@@ -3730,21 +3676,21 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2235\"><ecoicon item=\"District\"><color=#FF6868FF>Priority Road 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2213\"><ecoicon item=\"District\"><color=#0D2933FF>Road 94</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2220\"><ecoicon item=\"District\"><color=#A7A98EFF>Secondery Road 78</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2348\"><ecoicon item=\"District\"><color=#FF6868FF>Priority Road 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2326\"><ecoicon item=\"District\"><color=#0D2933FF>Road 98</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2333\"><ecoicon item=\"District\"><color=#A7A98EFF>Secondery Road 82</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Priority Road 2",
+                                "name": "Secondery Road 82",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Road 94",
+                                "name": "Priority Road 6",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Secondery Road 78",
+                                "name": "Road 98",
                                 "reference": true
                               }
                             ]
@@ -4255,16 +4201,16 @@
                                   "value": "Eco.Gameplay.LegislationSystem.District"
                                 },
                                 "requiredTag": null,
-                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2227\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 107</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2228\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 108</color></ecoicon></link></b></foldout>",
+                                "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2340\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 115</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2341\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 116</color></ecoicon></link></b></foldout>",
                                 "entries": [
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "Farmers Market 108",
+                                    "name": "Farmers Market 116",
                                     "reference": true
                                   },
                                   {
                                     "type": "Eco.Gameplay.LegislationSystem.District",
-                                    "name": "Farmers Market 107",
+                                    "name": "Farmers Market 115",
                                     "reference": true
                                   }
                                 ]
@@ -4297,16 +4243,16 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2227\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 107</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2228\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 108</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2340\"><ecoicon item=\"District\"><color=#49FF00FF>Farmers Market 115</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2341\"><ecoicon item=\"District\"><color=#2BAE22FF>Farmers Market 116</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 108",
+                                "name": "Farmers Market 116",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Farmers Market 107",
+                                "name": "Farmers Market 115",
                                 "reference": true
                               }
                             ]
@@ -4428,7 +4374,7 @@
         "type": "Eco.Gameplay.Civics.Laws.LawSection",
         "reference": false,
         "properties": {
-          "Title": "Section 7",
+          "Title": "Section 8",
           "UserDescription": "",
           "Triggers": [
             {
@@ -4437,48 +4383,132 @@
               "properties": {
                 "Trigger": {
                   "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
                 },
                 "Configs": [
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
                     "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Item Used",
+                    "propDisplayName": "Item Placed or Picked Up",
                     "properties": {
                       "List": {
                         "type": "GamePickerList",
                         "mustDeriveType": {
                           "type": "Type",
-                          "value": "Eco.Gameplay.Items.Item"
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
                         },
-                        "requiredTag": "Excavatable",
-                        "internalDescription": "Any",
-                        "entries": []
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
-                    "propNameBacker": "ToolUsed",
-                    "propDisplayName": "Tool Used",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.Item"
-                        },
-                        "requiredTag": "Excavation",
-                        "internalDescription": "Any",
-                        "entries": []
+                        "requiredTag": null,
+                        "internalDescription": "<b><link=\"TypeTooltip:2217\"><b><link=\"Item:StoreItem\"><style=\"Item\"><ecoicon item=\"StoreItem\">Store</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StoreItem"
+                          }
+                        ]
                       }
                     }
                   }
                 ]
               }
-            },
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2343\"><ecoicon item=\"District\"><color=#DE1965FF>City Housing Plot 7</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2344\"><ecoicon item=\"District\"><color=#F73A8EFF>Generic Plot 126</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Housing Plot 7",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Generic Plot 126",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.SendNotice",
+                    "reference": false,
+                    "properties": {
+                      "Message": "You can't illegally setup shop in your house!",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueContext",
+                        "contextName": "Citizen",
+                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 9",
+          "UserDescription": "",
+          "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
               "reference": false,
@@ -4557,14 +4587,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartTechnicalBlueItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.MortaredGraniteFireplaceItem"
                           },
                           {
@@ -4577,19 +4599,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartBrownItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarLargeBasaltFountainItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckRedItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartJaguarItem"
                           },
                           {
                             "type": "Type",
@@ -4598,10 +4608,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeStandingMortaredStoneSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartTechnicalBlueItem"
                           },
                           {
                             "type": "Type",
@@ -4689,10 +4695,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartOrangeItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeHangingStoneSignItem"
                           },
                           {
@@ -4705,15 +4707,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartPrideItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.WoodenElevatorItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckWhiteItem"
                           },
                           {
                             "type": "Type",
@@ -4757,10 +4751,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartBrownItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.StuffedElkItem"
                           },
                           {
@@ -4793,10 +4783,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartJaguarItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallStandingCedarSignItem"
                           },
                           {
@@ -4818,10 +4804,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.MortaredStoneBenchItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartBlackItem"
                           },
                           {
                             "type": "Type",
@@ -4893,14 +4875,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartYellowItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartRedItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarShaleFireplaceItem"
                           },
                           {
@@ -4921,15 +4895,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckOrangeItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.WainwrightTableItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckItem"
                           },
                           {
                             "type": "Type",
@@ -4969,19 +4935,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartBlackItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LatrineItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingFirSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckBrownItem"
                           },
                           {
                             "type": "Type",
@@ -4993,19 +4951,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckBlackItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeHangingCeibaSignItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarLargeStoneFountainItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartOrangeItem"
                           },
                           {
                             "type": "Type",
@@ -5049,19 +4999,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartYellowItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.StoreItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartTechnicalBlueItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartMatrixItem"
                           },
                           {
                             "type": "Type",
@@ -5078,10 +5016,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingRedwoodSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartMatrixItem"
                           },
                           {
                             "type": "Type",
@@ -5137,19 +5071,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartYellowItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckRedItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AdornedAshlarSandstoneChairItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartTechnicalRedItem"
                           },
                           {
                             "type": "Type",
@@ -5165,31 +5087,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckPinkItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckPinkItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckBlackItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AmendmentsItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.SteelTableLampItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckGalaxyItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartPurpleItem"
                           },
                           {
                             "type": "Type",
@@ -5209,15 +5111,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartBlackItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarLargeLimestoneFountainItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckMagmaItem"
                           },
                           {
                             "type": "Type",
@@ -5265,10 +5159,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WheelbarrowItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallStandingLumberSignItem"
                           },
                           {
@@ -5285,19 +5175,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartDarkBlueItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AdornedAshlarBasaltChairItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckGreenItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartBrownItem"
                           },
                           {
                             "type": "Type",
@@ -5318,6 +5196,10 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarSmallStoneFountainItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StockpileItem"
                           },
                           {
                             "type": "Type",
@@ -5377,10 +5259,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckAlligatorItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallSinkItem"
                           },
                           {
@@ -5405,10 +5283,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckPurpleItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AdvancedMasonryTableItem"
                           },
                           {
@@ -5421,10 +5295,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckPsychedelicItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.JawCrusherItem"
                           },
                           {
@@ -5434,10 +5304,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarLargeSandstoneFountainItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckDarkBlueItem"
                           },
                           {
                             "type": "Type",
@@ -5461,10 +5327,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckOrangeItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.ElectricLatheItem"
                           },
                           {
@@ -5481,7 +5343,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.ExcavatorItem"
+                            "value": "Eco.Mods.TechTree.LargeLumberStockpileItem"
                           },
                           {
                             "type": "Type",
@@ -5530,14 +5392,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingMortaredStoneSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "StoneRampItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartRedItem"
                           },
                           {
                             "type": "Type",
@@ -5597,6 +5451,10 @@
                           },
                           {
                             "type": "Type",
+                            "value": "Eco.Mods.TechTree.TinyStockpileItem"
+                          },
+                          {
+                            "type": "Type",
                             "value": "Eco.Mods.TechTree.WoodenFabricBedItem"
                           },
                           {
@@ -5625,23 +5483,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTractorItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.TreasuryItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.MachinistTableItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartWhiteItem"
                           },
                           {
                             "type": "Type",
@@ -5657,27 +5503,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartOrangeItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartLightBlueItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartDarkBlueItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckWhiteItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarSmallLimestoneFountainItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartTechnicalRedItem"
                           },
                           {
                             "type": "Type",
@@ -5685,15 +5511,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckLightBlueItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeStandingCeibaSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartPrideItem"
                           },
                           {
                             "type": "Type",
@@ -5729,10 +5547,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckBrownItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.FramedGlassDoorItem"
                           },
                           {
@@ -5742,10 +5556,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.PrimitivePaintingTableItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartPurpleItem"
                           },
                           {
                             "type": "Type",
@@ -5778,10 +5588,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.BrickFireplaceItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckGreenItem"
                           },
                           {
                             "type": "Type",
@@ -5833,19 +5639,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartGreenItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarBasaltFireplaceItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckSteampunkItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartGreenItem"
                           },
                           {
                             "type": "Type",
@@ -5869,23 +5663,7 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartCowItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartGreenItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.WorkbenchItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartPinkItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartWhiteItem"
                           },
                           {
                             "type": "Type",
@@ -5913,27 +5691,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartWhiteItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarSmallGneissFountainItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.HewnHardwoodBenchItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckPurpleItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartRedItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartCowItem"
                           },
                           {
                             "type": "Type",
@@ -5954,10 +5716,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingMortaredGraniteSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckYellowItem"
                           },
                           {
                             "type": "Type",
@@ -5989,14 +5747,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartLightBlueItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartTechnicalRedItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.CompositeOakBenchItem"
                           },
                           {
@@ -6022,14 +5772,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeHangingHardwoodSignItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartPinkItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartMatrixItem"
                           },
                           {
                             "type": "Type",
@@ -6073,10 +5815,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckPlasmaItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AdvancedCarpentryTableItem"
                           },
                           {
@@ -6093,10 +5831,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartPinkItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.EM.Artistry.ArtStationItem"
                           },
                           {
@@ -6106,14 +5840,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.WoodenFloorLampItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartLightBlueItem"
                           },
                           {
                             "type": "Type",
@@ -6209,6 +5935,10 @@
                           },
                           {
                             "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStockpileItem"
+                          },
+                          {
+                            "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingCeibaSignItem"
                           },
                           {
@@ -6253,11 +5983,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SteamTruckDarkBlueItem"
+                            "value": "Eco.Mods.TechTree.LargeStandingAshlarGneissSignItem"
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.LargeStandingAshlarGneissSignItem"
+                            "value": "Eco.Mods.TechTree.LumberStockpileItem"
                           },
                           {
                             "type": "Type",
@@ -6349,14 +6079,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartCowItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.WoodCartDarkBlueItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LoomItem"
                           },
                           {
@@ -6373,10 +6095,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.PoweredCartPrideItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.LargeStandingAshlarGraniteSignItem"
                           },
                           {
@@ -6385,19 +6103,11 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartPurpleItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.SmallHangingAshlarSandstoneSignItem"
                           },
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.CompositeJoshuaBenchItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckYellowItem"
                           },
                           {
                             "type": "Type",
@@ -6485,14 +6195,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckLightBlueItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.SmallWoodCartJaguarItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.CompositeRedwoodTableItem"
                           },
                           {
@@ -6506,10 +6208,6 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.FarmersTableItem"
-                          },
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.TruckItem"
                           },
                           {
                             "type": "Type",
@@ -6581,10 +6279,6 @@
                           },
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.SkidSteerItem"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.AshlarSandstoneBenchItem"
                           },
                           {
@@ -6609,19 +6303,251 @@
                   }
                 ]
               }
-            },
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "GameValueContext",
+                        "contextName": "PlacingObject",
+                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
+                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2348\"><ecoicon item=\"District\"><color=#FF6868FF>Priority Road 6</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2326\"><ecoicon item=\"District\"><color=#0D2933FF>Road 98</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2333\"><ecoicon item=\"District\"><color=#A7A98EFF>Secondery Road 82</color></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Secondery Road 82",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Priority Road 6",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Road 98",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 10",
+          "UserDescription": "",
+          "Triggers": [
             {
               "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
               "reference": false,
               "properties": {
                 "Trigger": {
                   "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.ConstructOrDeconstruct"
+                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
                 },
                 "Configs": [
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.WorldObjectItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>5 World Objects</u></linktext><title>5 World Objects</title><b><link=\"TypeTooltip:203\"><b><link=\"Item:LargeLumberStockpileItem\"><style=\"Item\"><ecoicon item=\"LargeLumberStockpileItem\">Large Lumber Stockpile</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1236\"><b><link=\"Item:LumberStockpileItem\"><style=\"Item\"><ecoicon item=\"LumberStockpileItem\">Lumber Stockpile</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1092\"><b><link=\"Item:SmallStockpileItem\"><style=\"Item\"><ecoicon item=\"SmallStockpileItem\">Small Stockpile</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2148\"><b><link=\"Item:StockpileItem\"><style=\"Item\"><ecoicon item=\"StockpileItem\">Stockpile</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:54\"><b><link=\"Item:TinyStockpileItem\"><style=\"Item\"><ecoicon item=\"TinyStockpileItem\">Tiny Stockpile</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.StockpileItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LargeLumberStockpileItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.TinyStockpileItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmallStockpileItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LumberStockpileItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "contextName": "Action Location",
+                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<b><link=\"ref:District:2324\"><ecoicon item=\"District\"><color=#1C96DDFF>Iron Mine 101</color></ecoicon></link></b>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Iron Mine 101",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+                        "properties": {
+                          "Titles": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Civics.Titles.Title"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><b><link=\"ref:AppointedTitle:12\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Dump master</style></ecoicon></link></b>\r\n<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Game Masters",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                                "name": "Dump master",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "contextName": "Citizen",
+                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
+                          },
+                          "Requirements": "HasNone"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 10",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
                     "propNameBacker": "ItemUsed",
                     "propDisplayName": "Item Used",
                     "properties": {
@@ -6631,15 +6557,32 @@
                           "type": "Type",
                           "value": "Eco.Gameplay.Items.Item"
                         },
-                        "requiredTag": "Constructable",
-                        "internalDescription": "Any",
-                        "entries": []
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<foldout><linktext><u>4 Currencies</u></linktext><title>4 Currencies</title><b><link=\"TypeTooltip:831\"><b><link=\"Item:CoalItem\"><style=\"Item\"><ecoicon item=\"CoalItem\">Coal</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1462\"><b><link=\"Item:CopperOreItem\"><style=\"Item\"><ecoicon item=\"CopperOreItem\">Copper Ore</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2756\"><b><link=\"Item:GoldOreItem\"><style=\"Item\"><ecoicon item=\"GoldOreItem\">Gold Ore</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:356\"><b><link=\"Item:IronOreItem\"><style=\"Item\"><ecoicon item=\"IronOreItem\">Iron Ore</ecoicon></style></link></b></link></b></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CopperOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GoldOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          }
+                        ]
                       }
                     }
                   },
                   {
                     "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.ConstructOrDeconstruct",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
                     "propNameBacker": "ToolUsed",
                     "propDisplayName": "Tool Used",
                     "properties": {
@@ -6649,7 +6592,7 @@
                           "type": "Type",
                           "value": "Eco.Gameplay.Items.Item"
                         },
-                        "requiredTag": "Construction",
+                        "requiredTag": "Excavation",
                         "internalDescription": "Any",
                         "entries": []
                       }
@@ -6688,318 +6631,26 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2235\"><ecoicon item=\"District\"><color=#FF6868FF>Priority Road 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2213\"><ecoicon item=\"District\"><color=#0D2933FF>Road 94</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2220\"><ecoicon item=\"District\"><color=#A7A98EFF>Secondery Road 78</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2323\"><ecoicon item=\"District\"><color=#F0BD00FF>Gold & Copper 103</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2324\"><ecoicon item=\"District\"><color=#1C96DDFF>Iron Mine 101</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2325\"><ecoicon item=\"District\"><color=#5D5D03FF>Limestone & Coal 101</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Priority Road 2",
+                                "name": "Iron Mine 101",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Road 94",
+                                "name": "Gold & Copper 103",
                                 "reference": true
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Secondery Road 78",
+                                "name": "Limestone & Coal 101",
                                 "reference": true
                               }
                             ]
                           },
                           "Requirements": "OutsideAll"
-                        }
-                      },
-                      {
-                        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
-                        "properties": {
-                          "Titles": {
-                            "type": "GamePickerList",
-                            "mustDeriveType": {
-                              "type": "Type",
-                              "value": "Eco.Gameplay.Civics.Titles.Title"
-                            },
-                            "requiredTag": null,
-                            "internalDescription": "<b><link=\"ref:AppointedTitle:6\"><ecoicon item=\"AppointedTitle\"><style=\"Government\">Game Masters</style></ecoicon></link></b>",
-                            "entries": [
-                              {
-                                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
-                                "name": "Game Masters",
-                                "reference": true
-                              }
-                            ]
-                          },
-                          "Citizen": {
-                            "type": "GameValueContext",
-                            "contextName": "Citizen",
-                            "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
-                            "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
-                          },
-                          "Requirements": "HasNone"
-                        }
-                      }
-                    ],
-                    "Comparison": "All"
-                  }
-                },
-                "Then": [
-                  {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
-                    "reference": false,
-                    "properties": {
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.Civics.SendNotice",
-                    "reference": false,
-                    "properties": {
-                      "Message": "You can't do that here!",
-                      "NotificationType": "SideBarMessage",
-                      "PeopleToSendTo": {
-                        "type": "GameValueContext",
-                        "contextName": "Citizen",
-                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
-                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
-                      },
-                      "ValueToDisplay": null,
-                      "LocationToDisplay": null,
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "type": "Eco.Gameplay.Civics.Laws.LawSection",
-        "reference": false,
-        "properties": {
-          "Title": "Section 8",
-          "UserDescription": "",
-          "Triggers": [
-            {
-              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
-              "reference": false,
-              "properties": {
-                "Trigger": {
-                  "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
-                },
-                "Configs": [
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
-                    "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Item Placed or Picked Up",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.WorldObjectItem"
-                        },
-                        "requiredTag": null,
-                        "internalDescription": "<b><link=\"TypeTooltip:2217\"><b><link=\"Item:StoreItem\"><style=\"Item\"><ecoicon item=\"StoreItem\">Store</ecoicon></style></link></b></link></b>",
-                        "entries": [
-                          {
-                            "type": "Type",
-                            "value": "Eco.Mods.TechTree.StoreItem"
-                          }
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "IfThenBlocks": [
-            {
-              "type": "Eco.Gameplay.Civics.IfThenBlock",
-              "reference": false,
-              "properties": {
-                "If": {
-                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-                  "properties": {
-                    "List": [
-                      {
-                        "type": "GameValueContext",
-                        "contextName": "PlacingObject",
-                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
-                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
-                      },
-                      {
-                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-                        "properties": {
-                          "Location": {
-                            "type": "GameValueContext",
-                            "contextName": "Action Location",
-                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
-                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
-                          },
-                          "Districts": {
-                            "type": "GamePickerList",
-                            "mustDeriveType": {
-                              "type": "Type",
-                              "value": "Eco.Gameplay.LegislationSystem.District"
-                            },
-                            "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2230\"><ecoicon item=\"District\"><color=#DE1965FF>City Housing Plot 3</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2231\"><ecoicon item=\"District\"><color=#F73A8EFF>Generic Plot 122</color></ecoicon></link></b></foldout>",
-                            "entries": [
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Generic Plot 122",
-                                "reference": true
-                              },
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "City Housing Plot 3",
-                                "reference": true
-                              }
-                            ]
-                          },
-                          "Requirements": "InsideOne"
-                        }
-                      }
-                    ],
-                    "Comparison": "All"
-                  }
-                },
-                "Then": [
-                  {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
-                    "reference": false,
-                    "properties": {
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  },
-                  {
-                    "type": "Eco.Gameplay.Civics.SendNotice",
-                    "reference": false,
-                    "properties": {
-                      "Message": "You can't illegally setup shop in your house!",
-                      "NotificationType": "SideBarMessage",
-                      "PeopleToSendTo": {
-                        "type": "GameValueContext",
-                        "contextName": "Citizen",
-                        "titleBacking": "<ecoicon item=\"User\">Citizen</ecoicon>",
-                        "tooltip": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who performed the interaction.\n"
-                      },
-                      "ValueToDisplay": null,
-                      "LocationToDisplay": null,
-                      "InfoboxOnSuccess": {
-                        "type": "Eco.Gameplay.Civics.GameValues.No",
-                        "properties": {}
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "type": "Eco.Gameplay.Civics.Laws.LawSection",
-        "reference": false,
-        "properties": {
-          "Title": "Section 9",
-          "UserDescription": "",
-          "Triggers": [
-            {
-              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
-              "reference": false,
-              "properties": {
-                "Trigger": {
-                  "type": "Type",
-                  "value": "Eco.Gameplay.GameActions.PlaceOrPickUpObject"
-                },
-                "Configs": [
-                  {
-                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
-                    "typeToConfig": "Eco.Gameplay.GameActions.PlaceOrPickUpObject",
-                    "propNameBacker": "ItemUsed",
-                    "propDisplayName": "Item Placed or Picked Up",
-                    "properties": {
-                      "List": {
-                        "type": "GamePickerList",
-                        "mustDeriveType": {
-                          "type": "Type",
-                          "value": "Eco.Gameplay.Items.WorldObjectItem"
-                        },
-                        "requiredTag": null,
-                        "internalDescription": "Any",
-                        "entries": []
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "IfThenBlocks": [
-            {
-              "type": "Eco.Gameplay.Civics.IfThenBlock",
-              "reference": false,
-              "properties": {
-                "If": {
-                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
-                  "properties": {
-                    "List": [
-                      {
-                        "type": "GameValueContext",
-                        "contextName": "PlacingObject",
-                        "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>",
-                        "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Placing Object</ecoicon>: Was the item placed?\n"
-                      },
-                      {
-                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
-                        "properties": {
-                          "Location": {
-                            "type": "GameValueContext",
-                            "contextName": "Action Location",
-                            "titleBacking": "<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>",
-                            "tooltip": "When triggered, the <ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon> value of the event will be used.\n\n<ecoicon item=\"PlaceOrPickUpObject\">Action Location</ecoicon>: The position where the interaction took place.\n"
-                          },
-                          "Districts": {
-                            "type": "GamePickerList",
-                            "mustDeriveType": {
-                              "type": "Type",
-                              "value": "Eco.Gameplay.LegislationSystem.District"
-                            },
-                            "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>3 Districts</u></linktext><title>3 Districts</title><b><link=\"ref:District:2235\"><ecoicon item=\"District\"><color=#FF6868FF>Priority Road 2</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2213\"><ecoicon item=\"District\"><color=#0D2933FF>Road 94</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2220\"><ecoicon item=\"District\"><color=#A7A98EFF>Secondery Road 78</color></ecoicon></link></b></foldout>",
-                            "entries": [
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Priority Road 2",
-                                "reference": true
-                              },
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Road 94",
-                                "reference": true
-                              },
-                              {
-                                "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Secondery Road 78",
-                                "reference": true
-                              }
-                            ]
-                          },
-                          "Requirements": "InsideOne"
                         }
                       }
                     ],
