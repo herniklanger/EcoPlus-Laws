@@ -1,6 +1,5 @@
 {
   "version": [
-    1,
     0
   ],
   "type": "Eco.Gameplay.Civics.Laws.Law",
@@ -591,7 +590,7 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2223\"><ecoicon item=\"District\"><color=#FFFFFFFF>Government 67</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 43</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2223\"><ecoicon item=\"District\"><color=#FFFFFFFF>Government 71</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 43</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
@@ -600,7 +599,7 @@
                               },
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Government 67",
+                                "name": "Government 71",
                                 "reference": true
                               }
                             ]
