@@ -1319,11 +1319,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2211\"><ecoicon item=\"District\"><color=#1C96DDFF>Iron Mine 97</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><b><link=\"ref:District:2211\"><ecoicon item=\"District\"><color=#1C96DDFF>Iron Mine 101</color></ecoicon></link></b>\r\n<b><link=\"ref:District:2237\"><ecoicon item=\"District\"><color=#5D5542FF>Mining Town 2</color></ecoicon></link></b></foldout>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Iron Mine 97",
+                                "name": "Iron Mine 101",
                                 "reference": true
                               },
                               {
