@@ -1842,11 +1842,11 @@
                               "value": "Eco.Gameplay.LegislationSystem.District"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 39</color></ecoicon></link></b>",
+                            "internalDescription": "<b><link=\"ref:District:2226\"><ecoicon item=\"District\"><color=#DB089AFF>Government infrastructure 43</color></ecoicon></link></b>",
                             "entries": [
                               {
                                 "type": "Eco.Gameplay.LegislationSystem.District",
-                                "name": "Government infrastructure 39",
+                                "name": "Government infrastructure 43",
                                 "reference": true
                               }
                             ]
