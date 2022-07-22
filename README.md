@@ -20,6 +20,9 @@ This is a reposetory for all laws being uest at the begining of a ECO+ server.
     Now you can sstrat add laws
   </li>
   <li>
-    Import a law by using the commad 
+    Import a law by using the commad <code>/civics import (law url)</code>
+    <code>
+      Example: /civics import https://raw.githubusercontent.com/herniklanger/EcoPlus-Laws/main/EcoPlus%20Season%207/Admin%20panel.json
+    </code>
   </li>
 <oi>
