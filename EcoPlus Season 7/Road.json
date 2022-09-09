@@ -42,11 +42,11 @@
                         "entries": [
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.StoneRoadItem"
+                            "value": "StoneRampItem"
                           },
                           {
                             "type": "Type",
-                            "value": "StoneRampItem"
+                            "value": "Eco.Mods.TechTree.StoneRoadItem"
                           }
                         ]
                       }
@@ -118,7 +118,7 @@
                           "Location": {
                             "type": "GameValueContext",
                             "_name": "Action Location",
-                            "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Action Location</ecoicon>",
+                            "markedUpName": "",
                             "contextDescription": "The position where the interaction took place."
                           },
                           "Districts": {
@@ -146,7 +146,7 @@
                           "Citizen": {
                             "type": "GameValueContext",
                             "_name": "Citizen",
-                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "markedUpName": "",
                             "contextDescription": "The citizen who performed the interaction."
                           },
                           "Skills": {
@@ -212,7 +212,7 @@
                       {
                         "type": "GameValueContext",
                         "_name": "Constructed",
-                        "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Constructed</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
@@ -257,7 +257,7 @@
                       "Person": {
                         "type": "GameValueContext",
                         "_name": "Citizen",
-                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "The citizen who performed the interaction."
                       },
                       "Count": {
@@ -284,7 +284,7 @@
                       {
                         "type": "GameValueContext",
                         "_name": "Deconstructed",
-                        "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Deconstructed</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "Was the block constructed or deconstructed?"
                       },
                       {
@@ -329,7 +329,7 @@
                       "Person": {
                         "type": "GameValueContext",
                         "_name": "Citizen",
-                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "The citizen who performed the interaction."
                       },
                       "Count": {
@@ -453,7 +453,7 @@
                           "Location": {
                             "type": "GameValueContext",
                             "_name": "Action Location",
-                            "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Action Location</ecoicon>",
+                            "markedUpName": "",
                             "contextDescription": "The position where the interaction took place."
                           },
                           "Districts": {
@@ -516,7 +516,7 @@
                       {
                         "type": "GameValueContext",
                         "_name": "Constructed",
-                        "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Constructed</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "Was the block constructed or deconstructed?"
                       }
                     ],
@@ -532,7 +532,7 @@
                       "Person": {
                         "type": "GameValueContext",
                         "_name": "Citizen",
-                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "The citizen who performed the interaction."
                       },
                       "Count": {
@@ -559,7 +559,7 @@
                       {
                         "type": "GameValueContext",
                         "_name": "Deconstructed",
-                        "markedUpName": "<ecoicon item=\"ConstructOrDeconstruct\">Deconstructed</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "Was the block constructed or deconstructed?"
                       }
                     ],
@@ -575,7 +575,7 @@
                       "Person": {
                         "type": "GameValueContext",
                         "_name": "Citizen",
-                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "markedUpName": "",
                         "contextDescription": "The citizen who performed the interaction."
                       },
                       "Count": {
