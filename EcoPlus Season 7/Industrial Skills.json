@@ -1,0 +1,3301 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Industrial Skills",
+  "reference": false,
+  "description": "This is the law that restricts what skills you can take, thus keeping the economy active for the longest possible period.",
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 1",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<link=\"Item:BakingSkill\"><style=\"Item\"><ecoicon item=\"BakingSkill\">Baking</ecoicon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BakingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>9 Specialties</u></linktext><title>9 Specialties</title><link=\"Item:AdvancedBakingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedBakingSkill\">Advanced Baking</ecoicon></style></link>\r\n<link=\"Item:ButcherySkill\"><style=\"Item\"><ecoicon item=\"ButcherySkill\">Butchery</ecoicon></style></link>\r\n<link=\"Item:CookingSkill\"><style=\"Item\"><ecoicon item=\"CookingSkill\">Cooking</ecoicon></style></link>\r\n<link=\"Item:FarmingSkill\"><style=\"Item\"><ecoicon item=\"FarmingSkill\">Farming</ecoicon></style></link>\r\n<link=\"Item:GatheringSkill\"><style=\"Item\"><ecoicon item=\"GatheringSkill\">Gathering</ecoicon></style></link>\r\n<link=\"Item:HuntingSkill\"><style=\"Item\"><ecoicon item=\"HuntingSkill\">Hunting</ecoicon></style></link>\r\n<link=\"Item:LoggingSkill\"><style=\"Item\"><ecoicon item=\"LoggingSkill\">Logging</ecoicon></style></link>\r\n<link=\"Item:MillingSkill\"><style=\"Item\"><ecoicon item=\"MillingSkill\">Milling</ecoicon></style></link>\r\n<link=\"Item:MiningSkill\"><style=\"Item\"><ecoicon item=\"MiningSkill\">Mining</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FarmingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.HuntingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.CookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.LoggingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.ButcherySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.GatheringSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedBaking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Butchery",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Cooking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Farming",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Gathering",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Hunting",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Logging",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Milling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mining",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Baking",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Baking",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 7",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<b><link=\"TypeTooltip:128\"><b><link=\"Item:SmeltingSkill\"><style=\"Item\"><ecoicon item=\"Smelting\">Smelting</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SmeltingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>8 Specialties</u></linktext><title>8 Specialties</title><b><link=\"TypeTooltip:2364\"><b><link=\"Item:AdvancedMasonrySkill\"><style=\"Item\"><ecoicon item=\"AdvancedMasonrySkill\">Advanced Masonry</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1030\"><b><link=\"Item:BasicEngineeringSkill\"><style=\"Item\"><ecoicon item=\"BasicEngineeringSkill\">Basic Engineering</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:1630\"><b><link=\"Item:CarpentrySkill\"><style=\"Item\"><ecoicon item=\"CarpentrySkill\">Carpentry</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2725\"><b><link=\"Item:ElectronicsSkill\"><style=\"Item\"><ecoicon item=\"ElectronicsSkill\">Electronics</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2842\"><b><link=\"Item:IndustrySkill\"><style=\"Item\"><ecoicon item=\"IndustrySkill\">Industry</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:683\"><b><link=\"Item:MechanicsSkill\"><style=\"Item\"><ecoicon item=\"MechanicsSkill\">Mechanics</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:279\"><b><link=\"Item:MiningSkill\"><style=\"Item\"><ecoicon item=\"MiningSkill\">Mining</ecoicon></style></link></b></link></b>\r\n<b><link=\"TypeTooltip:2445\"><b><link=\"Item:OilDrillingSkill\"><style=\"Item\"><ecoicon item=\"OilDrillingSkill\">Oil Drilling</ecoicon></style></link></b></link></b></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedMasonrySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.ElectronicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MechanicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.CarpentrySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.BasicEngineeringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.OilDrillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.IndustrySkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedMasonry",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "BasicEngineering",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Carpentry",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Electronics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Industry",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mechanics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mining",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "OilDrilling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Smelting",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Smelting",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 9",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<b><link=\"TypeTooltip:1940\"><b><link=\"Item:GlassworkingSkill\"><style=\"Item\"><ecoicon item=\"Glassworking\">Glassworking</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GlassworkingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>3 Specialties</u></linktext><title>3 Specialties</title><link=\"Item:AdvancedSmeltingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedSmeltingSkill\">Advanced Smelting</ecoicon></style></link>\r\n<link=\"Item:MiningSkill\"><style=\"Item\"><ecoicon item=\"MiningSkill\">Mining</ecoicon></style></link>\r\n<link=\"Item:OilDrillingSkill\"><style=\"Item\"><ecoicon item=\"OilDrillingSkill\">Oil Drilling</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.OilDrillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedSmeltingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedSmelting",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mining",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "OilDrilling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Glassworking",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Glassworking",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 13",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<b><link=\"TypeTooltip:1432\"><b><link=\"Item:PotterySkill\"><style=\"Item\"><ecoicon item=\"Pottery\">Pottery</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.PotterySkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>5 Specialties</u></linktext><title>5 Specialties</title><link=\"Item:ElectronicsSkill\"><style=\"Item\"><ecoicon item=\"ElectronicsSkill\">Electronics</ecoicon></style></link>\r\n<link=\"Item:FertilizersSkill\"><style=\"Item\"><ecoicon item=\"FertilizersSkill\">Fertilizers</ecoicon></style></link>\r\n<link=\"Item:MechanicsSkill\"><style=\"Item\"><ecoicon item=\"MechanicsSkill\">Mechanics</ecoicon></style></link>\r\n<link=\"Item:MiningSkill\"><style=\"Item\"><ecoicon item=\"MiningSkill\">Mining</ecoicon></style></link>\r\n<link=\"Item:OilDrillingSkill\"><style=\"Item\"><ecoicon item=\"OilDrillingSkill\">Oil Drilling</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.ElectronicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FertilizersSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MechanicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.OilDrillingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Electronics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Fertilizers",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mechanics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mining",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "OilDrilling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Pottery",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Pottery",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 15",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<b><link=\"TypeTooltip:746\"><b><link=\"Item:MechanicsSkill\"><style=\"Item\"><ecoicon item=\"Mechanics\">Mechanics</ecoicon></style></link></b></link></b>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MechanicsSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "When triggered, the <ecoicon item=\"User\">Citizen</ecoicon> value of the event will be used.\n\n<ecoicon item=\"User\">Citizen</ecoicon>: The citizen who changed demographics.\n"
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>6 Specialties</u></linktext><title>6 Specialties</title><link=\"Item:ElectronicsSkill\"><style=\"Item\"><ecoicon item=\"ElectronicsSkill\">Electronics</ecoicon></style></link>\r\n<link=\"Item:IndustrySkill\"><style=\"Item\"><ecoicon item=\"IndustrySkill\">Industry</ecoicon></style></link>\r\n<link=\"Item:MillingSkill\"><style=\"Item\"><ecoicon item=\"MillingSkill\">Milling</ecoicon></style></link>\r\n<link=\"Item:OilDrillingSkill\"><style=\"Item\"><ecoicon item=\"OilDrillingSkill\">Oil Drilling</ecoicon></style></link>\r\n<link=\"Item:PotterySkill\"><style=\"Item\"><ecoicon item=\"PotterySkill\">Pottery</ecoicon></style></link>\r\n<link=\"Item:SmeltingSkill\"><style=\"Item\"><ecoicon item=\"SmeltingSkill\">Smelting</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.ElectronicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.PotterySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.SmeltingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.OilDrillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.IndustrySkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Electronics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Industry",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Milling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "OilDrilling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Pottery",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Smelting",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Mechanics",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Mechanics",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 6",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<link=\"Item:MillingSkill\"><style=\"Item\"><ecoicon item=\"MillingSkill\">Milling</ecoicon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.MillingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>6 Specialties</u></linktext><title>6 Specialties</title><link=\"Item:AdvancedBakingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedBakingSkill\">Advanced Baking</ecoicon></style></link>\r\n<link=\"Item:AdvancedCookingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedCookingSkill\">Advanced Cooking</ecoicon></style></link>\r\n<link=\"Item:BakingSkill\"><style=\"Item\"><ecoicon item=\"BakingSkill\">Baking</ecoicon></style></link>\r\n<link=\"Item:CookingSkill\"><style=\"Item\"><ecoicon item=\"CookingSkill\">Cooking</ecoicon></style></link>\r\n<link=\"Item:IndustrySkill\"><style=\"Item\"><ecoicon item=\"IndustrySkill\">Industry</ecoicon></style></link>\r\n<link=\"Item:MechanicsSkill\"><style=\"Item\"><ecoicon item=\"MechanicsSkill\">Mechanics</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MechanicsSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.CookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.BakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.IndustrySkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedBaking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedCooking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Baking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Cooking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Industry",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mechanics",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Milling",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Milling",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 7",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.GainSpecialty"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Profession",
+                    "propDisplayName": "Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.GainSpecialty",
+                    "propNameBacker": "Specialty",
+                    "propDisplayName": "Specialty",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "<link=\"Item:CookingSkill\"><style=\"Item\"><ecoicon item=\"CookingSkill\">Cooking</ecoicon></style></link>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CookingSkill"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.SkillRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "The citizen who changed demographics."
+                          },
+                          "Skills": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.Skills.Skill"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>9 Specialties</u></linktext><title>9 Specialties</title><link=\"Item:AdvancedCookingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedCookingSkill\">Advanced Cooking</ecoicon></style></link>\r\n<link=\"Item:BakingSkill\"><style=\"Item\"><ecoicon item=\"BakingSkill\">Baking</ecoicon></style></link>\r\n<link=\"Item:ButcherySkill\"><style=\"Item\"><ecoicon item=\"ButcherySkill\">Butchery</ecoicon></style></link>\r\n<link=\"Item:FarmingSkill\"><style=\"Item\"><ecoicon item=\"FarmingSkill\">Farming</ecoicon></style></link>\r\n<link=\"Item:GatheringSkill\"><style=\"Item\"><ecoicon item=\"GatheringSkill\">Gathering</ecoicon></style></link>\r\n<link=\"Item:HuntingSkill\"><style=\"Item\"><ecoicon item=\"HuntingSkill\">Hunting</ecoicon></style></link>\r\n<link=\"Item:LoggingSkill\"><style=\"Item\"><ecoicon item=\"LoggingSkill\">Logging</ecoicon></style></link>\r\n<link=\"Item:MillingSkill\"><style=\"Item\"><ecoicon item=\"MillingSkill\">Milling</ecoicon></style></link>\r\n<link=\"Item:MiningSkill\"><style=\"Item\"><ecoicon item=\"MiningSkill\">Mining</ecoicon></style></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FarmingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.HuntingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.LoggingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.ButcherySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.MillingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.GatheringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.BakingSkill"
+                              }
+                            ]
+                          },
+                          "Requirements": "HasAny",
+                          "RequiredLevel": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "AdvancedCooking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Baking",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Butchery",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Farming",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Gathering",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Hunting",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Logging",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Milling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Mining",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "Any"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "Cooking",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Not",
+                                  "properties": {
+                                    "NotValue": {
+                                      "type": "Eco.Mods.Companies.IsCeoOfCompany",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                          "contextDescription": "The citizen who changed demographics."
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                              "reference": false,
+                              "properties": {
+                                "StatName": "Cooking",
+                                "Person": {
+                                  "type": "Eco.Mods.Companies.CompanyCeo",
+                                  "properties": {
+                                    "LegalPerson": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who changed demographics."
+                                    }
+                                  }
+                                },
+                                "Count": {
+                                  "type": "GameValueWrapper",
+                                  "value": 1.0
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
