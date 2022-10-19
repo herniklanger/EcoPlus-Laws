@@ -4,7 +4,7 @@
     0
   ],
   "type": "Eco.Gameplay.Civics.Laws.Law",
-  "name": "Moeern Skills",
+  "name": "Modern Skills",
   "reference": false,
   "description": "This is the law that restricts what skills you can take, thus keeping the economy active for the longest possible period.",
   "properties": {
