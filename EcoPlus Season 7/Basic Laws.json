@@ -4,7 +4,7 @@
     0
   ],
   "type": "Eco.Gameplay.Civics.Laws.Law",
-  "name": "Basic Laws",
+  "name": "Cleaning",
   "reference": false,
   "description": "Check if people have permission to clean up felled trees from other people's properties",
   "properties": {
