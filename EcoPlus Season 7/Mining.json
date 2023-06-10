@@ -1,0 +1,430 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Mining",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 1",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<foldout><linktext><u>8 Excavatables</u></linktext><title>8 Excavatables</title><link=\"Item:BasaltItem\"><style=\"Item\"><ecoicon item=\"BasaltItem\">Basalt</ecoicon></style></link>\r\n<link=\"Item:CoalItem\"><style=\"Item\"><ecoicon item=\"CoalItem\">Coal</ecoicon></style></link>\r\n<link=\"Item:GneissItem\"><style=\"Item\"><ecoicon item=\"GneissItem\">Gneiss</ecoicon></style></link>\r\n<link=\"Item:GraniteItem\"><style=\"Item\"><ecoicon item=\"GraniteItem\">Granite</ecoicon></style></link>\r\n<link=\"Item:IronOreItem\"><style=\"Item\"><ecoicon item=\"IronOreItem\">Iron Ore</ecoicon></style></link>\r\n<link=\"Item:LimestoneItem\"><style=\"Item\"><ecoicon item=\"LimestoneItem\">Limestone</ecoicon></style></link>\r\n<link=\"Item:SandstoneItem\"><style=\"Item\"><ecoicon item=\"SandstoneItem\">Sandstone</ecoicon></style></link>\r\n<link=\"Item:ShaleItem\"><style=\"Item\"><ecoicon item=\"ShaleItem\">Shale</ecoicon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GraniteItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ShaleItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LimestoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GneissItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SandstoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasaltItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DropOrPickupBlock"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DropOrPickupBlock",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Block Placed or Picked Up",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.BlockItem"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "<foldout><linktext><u>8 Excavatables</u></linktext><title>8 Excavatables</title><link=\"Item:BasaltItem\"><style=\"Item\"><ecoicon item=\"BasaltItem\">Basalt</ecoicon></style></link>\r\n<link=\"Item:CoalItem\"><style=\"Item\"><ecoicon item=\"CoalItem\">Coal</ecoicon></style></link>\r\n<link=\"Item:GneissItem\"><style=\"Item\"><ecoicon item=\"GneissItem\">Gneiss</ecoicon></style></link>\r\n<link=\"Item:GraniteItem\"><style=\"Item\"><ecoicon item=\"GraniteItem\">Granite</ecoicon></style></link>\r\n<link=\"Item:IronOreItem\"><style=\"Item\"><ecoicon item=\"IronOreItem\">Iron Ore</ecoicon></style></link>\r\n<link=\"Item:LimestoneItem\"><style=\"Item\"><ecoicon item=\"LimestoneItem\">Limestone</ecoicon></style></link>\r\n<link=\"Item:SandstoneItem\"><style=\"Item\"><ecoicon item=\"SandstoneItem\">Sandstone</ecoicon></style></link>\r\n<link=\"Item:ShaleItem\"><style=\"Item\"><ecoicon item=\"ShaleItem\">Shale</ecoicon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GraniteItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.ShaleItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.LimestoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GneissItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.SandstoneItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.BasaltItem"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<ecoicon item=\"DigOrMine\">Action Location</ecoicon>",
+                            "contextDescription": "The position where the interaction took place."
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<link=\"view:2900:22386415\"><icon name=\"District\"><color=#919290FF>Limestone Mine 2</color></icon></link>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Limestone Mine 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "InsideOne"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Mods.LawExtensions.HeightAt",
+                            "properties": {
+                              "Location": {
+                                "type": "GameValueContext",
+                                "_name": "Action Location",
+                                "markedUpName": "<ecoicon item=\"DigOrMine\">Action Location</ecoicon>",
+                                "contextDescription": "The position where the interaction took place."
+                              }
+                            }
+                          },
+                          "Comparison": "LessThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 69.0
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.IgnoreAuth_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 3",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "<foldout><linktext><u>4 Excavatables</u></linktext><title>4 Excavatables</title><link=\"Item:CoalItem\"><style=\"Item\"><ecoicon item=\"CoalItem\">Coal</ecoicon></style></link>\r\n<link=\"Item:CopperOreItem\"><style=\"Item\"><ecoicon item=\"CopperOreItem\">Copper Ore</ecoicon></style></link>\r\n<link=\"Item:GoldOreItem\"><style=\"Item\"><ecoicon item=\"GoldOreItem\">Gold Ore</ecoicon></style></link>\r\n<link=\"Item:IronOreItem\"><style=\"Item\"><ecoicon item=\"IronOreItem\">Iron Ore</ecoicon></style></link></foldout>",
+                        "entries": [
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CoalItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.GoldOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.IronOreItem"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CopperOreItem"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnUnownedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<ecoicon item=\"DigOrMine\">Action Location</ecoicon>",
+                            "contextDescription": "The position where the interaction took place."
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>11 Districts</u></linktext><title>11 Districts</title><link=\"view:2900:22386405\"><icon name=\"District\"><color=#8709C1FF>2 Wide Roads 2</color></icon></link>\r\n<link=\"view:2900:22386424\"><icon name=\"District\"><color=#ECD4ECFF>City Roads 2</color></icon></link>\r\n<link=\"view:2900:22386425\"><icon name=\"District\"><color=#1D1A20FF>Coal Mine 2</color></icon></link>\r\n<link=\"view:2900:22386413\"><icon name=\"District\"><color=#C88063FF>Copper Mine 2</color></icon></link>\r\n<link=\"view:2900:22386418\"><icon name=\"District\"><color=#807E00FF>Gold Mine 2</color></icon></link>\r\n<link=\"view:2900:22386421\"><icon name=\"District\"><color=#000000FF>Highway 3</color></icon></link>\r\n<link=\"view:2900:22386422\"><icon name=\"District\"><color=#C2AB53FF>Highway 4</color></icon></link>\r\n<link=\"view:2900:22386416\"><icon name=\"District\"><color=#BD0000FF>Iron Mine 2</color></icon></link>\r\n<link=\"view:2900:4551540\"><icon name=\"District\"><color=#7B5DDFFF>Iron Mine 3</color></icon></link>\r\n<link=\"view:2900:22386415\"><icon name=\"District\"><color=#919290FF>Limestone Mine 2</color></icon></link>\r\n<link=\"view:2900:22386423\"><icon name=\"District\"><color=#4E6776FF>Median 2</color></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Iron Mine 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Iron Mine 3",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Coal Mine 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Median 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Highway 4",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Limestone Mine 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Copper Mine 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Gold Mine 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "2 Wide Roads 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "City Roads 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Highway 3",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
