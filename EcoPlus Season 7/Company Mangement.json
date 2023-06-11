@@ -1,0 +1,2422 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Company Mangement",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 2",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Traded",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                        "properties": {
+                          "Citizen": {
+                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Shop Owner",
+                                "markedUpName": "<ecoicon item=\"User\">Shop Owner</ecoicon>",
+                                "contextDescription": "The owner of the shop where the trade occurred."
+                              }
+                            }
+                          },
+                          "AuthorizedOrNot": "NotOwnerOfProperty"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 3",
+          "UserDescription": "Storage objects need to be expanded - all stockpiles and the like",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.InventoryAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Moved",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.InventoryAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Storage Container",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Storage Container",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.OnOwnedLand",
+                        "properties": {}
+                      },
+                      {
+                        "type": "GameValueContext",
+                        "_name": "Is Not Vehicle",
+                        "markedUpName": "<ecoicon item=\"InventoryAction\">Is Not Vehicle</ecoicon>",
+                        "contextDescription": "Is the object a vehicle?"
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                        "properties": {
+                          "List": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                  "contextDescription": "The citizen who performed the interaction."
+                                },
+                                "AuthorizedOrNot": "OwnerOfProperty"
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Values.PropertyRequirements",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                  "properties": {
+                                    "Citizen": {
+                                      "type": "GameValueContext",
+                                      "_name": "Citizen",
+                                      "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                      "contextDescription": "The citizen who performed the interaction."
+                                    }
+                                  }
+                                },
+                                "AuthorizedOrNot": "OwnerOfProperty"
+                              }
+                            }
+                          ],
+                          "Comparison": "None"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.DistrictRequirements",
+                        "properties": {
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"InventoryAction\">Action Location</icon>",
+                            "contextDescription": "The position where the interaction took place."
+                          },
+                          "Districts": {
+                            "type": "GamePickerList",
+                            "mustDeriveType": {
+                              "type": "Type",
+                              "value": "Eco.Gameplay.LegislationSystem.District"
+                            },
+                            "requiredTag": null,
+                            "internalDescription": "<foldout><linktext><u>2 Districts</u></linktext><title>2 Districts</title><link=\"view:2900:22386398\"><icon name=\"District\"><color=#FFFFFFFF>Government 2</color></icon></link>\r\n<link=\"view:2900:22386414\"><icon name=\"District\"><color=#02D1C2FF>Power Plant 2</color></icon></link></foldout>",
+                            "entries": [
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Power Plant 2",
+                                "reference": true
+                              },
+                              {
+                                "type": "Eco.Gameplay.LegislationSystem.District",
+                                "name": "Government 2",
+                                "reference": true
+                              }
+                            ]
+                          },
+                          "Requirements": "OutsideAll"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 4",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Mods.Companies.GameActions.CitizenLeaveCompany"
+                },
+                "Configs": []
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.GameValues.RecordCustomStat",
+                    "reference": false,
+                    "properties": {
+                      "StatName": "CompanyLeave",
+                      "Person": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                        "contextDescription": "The citizen who is leaving the company."
+                      },
+                      "Count": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 5",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CurrencyTrade"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "Currency",
+                    "propDisplayName": "Currency",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Economy.Currency"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.CurrencyTrade",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Traded",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Age",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "henrik-langer",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                        "properties": {
+                          "List": [
+                            {
+                              "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            }
+                          ],
+                          "Comparison": "Any"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "EqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 3.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                              "reference": false,
+                              "properties": {
+                                "Message": "Tax",
+                                "NotificationType": "OnScreenNotice",
+                                "PeopleToSendTo": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                },
+                                "ValueToDisplay": null,
+                                "LocationToDisplay": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "GreaterThanOrEqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 4.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Citizen",
+                                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                            "contextDescription": "The citizen who performed the interaction."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Age",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "henrik-langer",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "EqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 1.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                        "properties": {
+                          "List": [
+                            {
+                              "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            }
+                          ],
+                          "Comparison": "Any"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "EqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 4.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 10.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 10.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "EqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 5.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "GreaterThanOrEqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 6.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Age",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "GameValueWrapper",
+                                "value": {
+                                  "type": "Eco.Gameplay.Players.User",
+                                  "name": "henrik-langer",
+                                  "reference": true
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThanOrEqualTo",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 2.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                        "properties": {
+                          "List": [
+                            {
+                              "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                              "properties": {
+                                "Citizen": {
+                                  "type": "GameValueContext",
+                                  "_name": "Seller",
+                                  "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                  "contextDescription": "The selling player."
+                                }
+                              }
+                            }
+                          ],
+                          "Comparison": "All"
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "EqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 6.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Seller",
+                                            "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                            "contextDescription": "The selling player."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 20.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Mods.Companies.SkillCount",
+                                      "properties": {
+                                        "LegalPerson": {
+                                          "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                                          "properties": {
+                                            "Citizen": {
+                                              "type": "GameValueContext",
+                                              "_name": "Seller",
+                                              "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                              "contextDescription": "The selling player."
+                                            }
+                                          }
+                                        },
+                                        "UniqueSkills": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "Highest": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Comparison": "GreaterThanOrEqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 7.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "GameValueContext",
+                                            "_name": "Citizen",
+                                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                            "contextDescription": "The citizen who performed the interaction."
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "IfThenBlock": {
+                                  "type": "Eco.Gameplay.Civics.IfThenBlock",
+                                  "reference": false,
+                                  "properties": {
+                                    "If": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                      "properties": {
+                                        "List": [
+                                          {
+                                            "type": "Eco.Mods.Companies.IsEmployeeOfCompany",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "Comparison": "All"
+                                      }
+                                    },
+                                    "Then": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.LegalActions.Tax_LegalAction",
+                                        "reference": false,
+                                        "properties": {
+                                          "TargetBankAccount": {
+                                            "type": "GameValueWrapper",
+                                            "value": {
+                                              "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
+                                              "name": "Treasury Bank Account",
+                                              "reference": true
+                                            }
+                                          },
+                                          "Target": {
+                                            "type": "Eco.Mods.Companies.EmployerLegalPersonAlias",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Seller",
+                                                "markedUpName": "<ecoicon item=\"User\">Seller</ecoicon>",
+                                                "contextDescription": "The selling player."
+                                              }
+                                            }
+                                          },
+                                          "Currency": {
+                                            "type": "GameValueContext",
+                                            "_name": "Currency",
+                                            "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency</ecoicon>",
+                                            "contextDescription": "Currency used in the transaction."
+                                          },
+                                          "Amount": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Percent_GameValue",
+                                            "properties": {
+                                              "Number": {
+                                                "type": "GameValueContext",
+                                                "_name": "Currency Amount",
+                                                "markedUpName": "<ecoicon item=\"CurrencyTrade\">Currency Amount</ecoicon>",
+                                                "contextDescription": "Amount used in the transaction."
+                                              },
+                                              "Percent": {
+                                                "type": "GameValueWrapper",
+                                                "value": 50.0
+                                              }
+                                            }
+                                          },
+                                          "PreventIfUnableToPay": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          },
+                                          "InfoboxOnSuccess": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.No",
+                                            "properties": {}
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.No",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Section 5",
+          "UserDescription": "",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.CitizenTimer"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.CitizenTimerTriggerConfig",
+                    "typeToConfig": null,
+                    "propNameBacker": null,
+                    "propDisplayName": null,
+                    "properties": {
+                      "RepeatForEachUser": {
+                        "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                        "name": "Company Employees",
+                        "reference": true
+                      },
+                      "HoursBetweenExecutions": 1.0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.TransferToAccount_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "SourceAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          }
+                        }
+                      },
+                      "TargetAccount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.PersonalBankAccount_GameValue",
+                        "properties": {
+                          "User": {
+                            "type": "Eco.Mods.Companies.EmployerLegalPerson",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                "contextDescription": "The citizen currently being processed for the timer event."
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Currency": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Economy.Currency",
+                          "name": "Gold",
+                          "reference": true
+                        }
+                      },
+                      "Amount": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Values.Wealth",
+                        "properties": {
+                          "Currency": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Economy.Currency",
+                              "name": "Gold",
+                              "reference": true
+                            }
+                          },
+                          "Citizen": {
+                            "type": "GameValueContext",
+                            "_name": "Citizen",
+                            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                            "contextDescription": "The citizen currently being processed for the timer event."
+                          }
+                        }
+                      },
+                      "PreventIfUnableToPay": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.No",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

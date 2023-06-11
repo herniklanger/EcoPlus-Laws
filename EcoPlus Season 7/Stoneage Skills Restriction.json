@@ -99,15 +99,7 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.MiningSkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.FarmingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.HuntingSkill"
                               },
                               {
                                 "type": "Type",
@@ -119,7 +111,15 @@
                               },
                               {
                                 "type": "Type",
+                                "value": "Eco.Mods.TechTree.MiningSkill"
+                              },
+                              {
+                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.GatheringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.HuntingSkill"
                               }
                             ]
                           },
@@ -328,9 +328,20 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.ChangeReputation_LegalAction",
                     "reference": false,
                     "properties": {
+                      "ReputationChange": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "ReputationMessage": "gz",
+                      "Citizen": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -374,7 +385,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -704,20 +715,8 @@
                               "value": "Eco.Gameplay.Skills.Skill"
                             },
                             "requiredTag": null,
-                            "internalDescription": "<foldout><linktext><u>7 Skills</u></linktext><title>7 Skills</title><link=\"Item:AdvancedBakingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedBakingSkill\">Advanced Baking</ecoicon></style></link>\r\n<link=\"Item:AdvancedCookingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedCookingSkill\">Advanced Cooking</ecoicon></style></link>\r\n<link=\"Item:BakingSkill\"><style=\"Item\"><ecoicon item=\"BakingSkill\">Baking</ecoicon></style></link>\r\n<link=\"Item:CampfireCookingSkill\"><style=\"Item\"><ecoicon item=\"CampfireCookingSkill\">Campfire Cooking</ecoicon></style></link>\r\n<link=\"Item:CookingSkill\"><style=\"Item\"><ecoicon item=\"CookingSkill\">Cooking</ecoicon></style></link>\r\n<link=\"Item:FertilizersSkill\"><style=\"Item\"><ecoicon item=\"FertilizersSkill\">Fertilizers</ecoicon></style></link>\r\n<link=\"Item:TailorSkill\"><style=\"Item\"><ecoicon item=\"TailorSkill\">Tailor</ecoicon></style></link></foldout>",
+                            "internalDescription": "<foldout><linktext><u>8 Skills</u></linktext><title>8 Skills</title><link=\"Item:AdvancedBakingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedBakingSkill\">Advanced Baking</ecoicon></style></link>\r\n<link=\"Item:AdvancedCookingSkill\"><style=\"Item\"><ecoicon item=\"AdvancedCookingSkill\">Advanced Cooking</ecoicon></style></link>\r\n<link=\"Item:BakingSkill\"><style=\"Item\"><ecoicon item=\"BakingSkill\">Baking</ecoicon></style></link>\r\n<link=\"Item:CampfireCookingSkill\"><style=\"Item\"><ecoicon item=\"CampfireCookingSkill\">Campfire Cooking</ecoicon></style></link>\r\n<link=\"Item:CookingSkill\"><style=\"Item\"><ecoicon item=\"CookingSkill\">Cooking</ecoicon></style></link>\r\n<link=\"Item:FertilizersSkill\"><style=\"Item\"><ecoicon item=\"FertilizersSkill\">Fertilizers</ecoicon></style></link>\r\n<link=\"Item:MillingSkill\"><style=\"Item\"><ecoicon item=\"MillingSkill\">Milling</ecoicon></style></link>\r\n<link=\"Item:TailorSkill\"><style=\"Item\"><ecoicon item=\"TailorSkill\">Tailor</ecoicon></style></link></foldout>",
                             "entries": [
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.FertilizersSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.TailorSkill"
-                              },
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.CookingSkill"
@@ -728,11 +727,27 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                                "value": "Eco.Mods.TechTree.MillingSkill"
                               },
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.BakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.TailorSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FertilizersSkill"
                               }
                             ]
                           },
@@ -806,6 +821,38 @@
                             "value": 0.0
                           }
                         }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.CustomStatQuery",
+                            "properties": {
+                              "CustomStatName": "Milling",
+                              "TimeRangeInHours": {
+                                "type": "GameValueWrapper",
+                                "value": 0.0
+                              },
+                              "TimeRangeType": "CurrentTimeBlock",
+                              "User": {
+                                "type": "Eco.Mods.Companies.CompanyCeo",
+                                "properties": {
+                                  "LegalPerson": {
+                                    "type": "GameValueContext",
+                                    "_name": "Citizen",
+                                    "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+                                    "contextDescription": "The citizen who changed demographics."
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 0.0
+                          }
+                        }
                       }
                     ],
                     "Comparison": "Any"
@@ -813,9 +860,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -859,7 +918,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -1033,15 +1092,11 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.PotterySkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.FarmingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.HuntingSkill"
+                                "value": "Eco.Mods.TechTree.PotterySkill"
                               },
                               {
                                 "type": "Type",
@@ -1050,6 +1105,10 @@
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.GatheringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.HuntingSkill"
                               }
                             ]
                           },
@@ -1226,9 +1285,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -1272,7 +1343,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -1446,19 +1517,7 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.FertilizersSkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.CookingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.TailoringSkill"
                               },
                               {
                                 "type": "Type",
@@ -1466,11 +1525,23 @@
                               },
                               {
                                 "type": "Type",
+                                "value": "Eco.Mods.TechTree.BakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.TailoringSkill"
+                              },
+                              {
+                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.BakingSkill"
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FertilizersSkill"
                               }
                             ]
                           },
@@ -1711,9 +1782,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -1757,7 +1840,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -1931,19 +2014,7 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.FertilizersSkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.CookingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.TailoringSkill"
                               },
                               {
                                 "type": "Type",
@@ -1951,11 +2022,23 @@
                               },
                               {
                                 "type": "Type",
+                                "value": "Eco.Mods.TechTree.BakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.TailoringSkill"
+                              },
+                              {
+                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.BakingSkill"
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.FertilizersSkill"
                               }
                             ]
                           },
@@ -2186,9 +2269,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -2232,7 +2327,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -2406,19 +2501,7 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.CookingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.CarpentrySkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.BasicEngineeringSkill"
                               },
                               {
                                 "type": "Type",
@@ -2426,11 +2509,23 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                                "value": "Eco.Mods.TechTree.BasicEngineeringSkill"
                               },
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.BakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedCookingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.CarpentrySkill"
                               }
                             ]
                           },
@@ -2671,9 +2766,20 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.ChangeReputation_LegalAction",
                     "reference": false,
                     "properties": {
+                      "ReputationChange": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "ReputationMessage": "gz",
+                      "Citizen": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -2722,7 +2828,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -2953,9 +3059,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -2999,7 +3117,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -3173,15 +3291,11 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedMasonrySkill"
+                                "value": "Eco.Mods.TechTree.CookingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.MasonrySkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
+                                "value": "Eco.Mods.TechTree.CampfireCookingSkill"
                               },
                               {
                                 "type": "Type",
@@ -3189,7 +3303,7 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.CookingSkill"
+                                "value": "Eco.Mods.TechTree.AdvancedMasonrySkill"
                               },
                               {
                                 "type": "Type",
@@ -3201,11 +3315,11 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.GlassworkingSkill"
+                                "value": "Eco.Mods.TechTree.BakingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.CampfireCookingSkill"
+                                "value": "Eco.Mods.TechTree.AdvancedSmeltingSkill"
                               },
                               {
                                 "type": "Type",
@@ -3213,11 +3327,15 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.BakingSkill"
+                                "value": "Eco.Mods.TechTree.AdvancedBakingSkill"
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.AdvancedSmeltingSkill"
+                                "value": "Eco.Mods.TechTree.MasonrySkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.GlassworkingSkill"
                               }
                             ]
                           },
@@ -3608,9 +3726,20 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.ChangeReputation_LegalAction",
                     "reference": false,
                     "properties": {
+                      "ReputationChange": {
+                        "type": "GameValueWrapper",
+                        "value": 1.0
+                      },
+                      "ReputationMessage": "gz",
+                      "Citizen": {
+                        "type": "GameValueContext",
+                        "_name": "Citizen",
+                        "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                        "contextDescription": "The citizen who changed demographics."
+                      },
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -3654,7 +3783,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -3828,7 +3957,7 @@
                             "entries": [
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.MasonrySkill"
+                                "value": "Eco.Mods.TechTree.LoggingSkill"
                               },
                               {
                                 "type": "Type",
@@ -3840,7 +3969,7 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.LoggingSkill"
+                                "value": "Eco.Mods.TechTree.MasonrySkill"
                               }
                             ]
                           },
@@ -3985,9 +4114,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -4031,7 +4172,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -4209,15 +4350,15 @@
                               },
                               {
                                 "type": "Type",
-                                "value": "Eco.Mods.TechTree.HuntingSkill"
-                              },
-                              {
-                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.ButcherySkill"
                               },
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.GatheringSkill"
+                              },
+                              {
+                                "type": "Type",
+                                "value": "Eco.Mods.TechTree.HuntingSkill"
                               },
                               {
                                 "type": "Type",
@@ -4398,9 +4539,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -4444,7 +4597,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -4618,15 +4771,15 @@
                             "entries": [
                               {
                                 "type": "Type",
+                                "value": "Eco.Mods.TechTree.LoggingSkill"
+                              },
+                              {
+                                "type": "Type",
                                 "value": "Eco.Mods.TechTree.CompositesSkill"
                               },
                               {
                                 "type": "Type",
                                 "value": "Eco.Mods.TechTree.SmeltingSkill"
-                              },
-                              {
-                                "type": "Type",
-                                "value": "Eco.Mods.TechTree.LoggingSkill"
                               }
                             ]
                           },
@@ -4739,9 +4892,21 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
                     "reference": false,
                     "properties": {
+                      "Message": "a",
+                      "NotificationType": "SideBarMessage",
+                      "PeopleToSendTo": {
+                        "type": "GameValueWrapper",
+                        "value": {
+                          "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                          "name": "Everyone",
+                          "reference": true
+                        }
+                      },
+                      "ValueToDisplay": null,
+                      "LocationToDisplay": null,
                       "InfoboxOnSuccess": {
                         "type": "Eco.Gameplay.Civics.GameValues.No",
                         "properties": {}
@@ -4785,7 +4950,7 @@
                     }
                   },
                   {
-                    "type": "Eco.Gameplay.Civics.Conditional_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
                     "reference": false,
                     "properties": {
                       "IfThenBlock": {
@@ -4920,10 +5085,6 @@
                         "entries": [
                           {
                             "type": "Type",
-                            "value": "Eco.Mods.TechTree.CuttingEdgeCookingSkill"
-                          },
-                          {
-                            "type": "Type",
                             "value": "Eco.Mods.TechTree.PaperMillingSkill"
                           },
                           {
@@ -4933,6 +5094,10 @@
                           {
                             "type": "Type",
                             "value": "Eco.Mods.TechTree.GatheringSkill"
+                          },
+                          {
+                            "type": "Type",
+                            "value": "Eco.Mods.TechTree.CuttingEdgeCookingSkill"
                           }
                         ]
                       }
@@ -4956,7 +5121,7 @@
                 },
                 "Then": [
                   {
-                    "type": "Eco.Gameplay.Civics.Prevent_LegalAction",
+                    "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
                     "reference": false,
                     "properties": {
                       "InfoboxOnSuccess": {
