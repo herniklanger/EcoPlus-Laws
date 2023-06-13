@@ -1,0 +1,76 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+  "name": "Mining Manager",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+      "name": "Mining",
+      "reference": true
+    },
+    "Conditions": [
+      {
+        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+        "properties": {
+          "Titles": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Civics.Titles.Title"
+            },
+            "requiredTag": null,
+            "internalDescription": "<foldout><linktext><u>2 Titles</u></linktext><title>2 Titles</title><link=\"view:1048:1686117\"><icon name=\"AppointedTitle\"><style=\"Government\">Mining</style></icon></link>\r\n<link=\"view:3164:2686993\"><icon name=\"ElectedTitle\"><style=\"Government\">Official Mining Manager</style></icon></link></foldout>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                "name": "Mining",
+                "reference": true
+              },
+              {
+                "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+                "name": "Official Mining Manager",
+                "reference": true
+              }
+            ]
+          },
+          "Citizen": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<ecoicon item=\"User\">Citizen</ecoicon>",
+            "contextDescription": "The citizen being checked for this demographic."
+          },
+          "Requirements": "HasAny"
+        }
+      }
+    ],
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": {
+          "type": "GameValueWrapper",
+          "value": {
+            "type": "Eco.Gameplay.Economy.Currency",
+            "name": "Gold",
+            "reference": true
+          }
+        },
+        "AmountPerHour": {
+          "type": "GameValueWrapper",
+          "value": 3.0
+        },
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": {
+      "type": "Eco.Gameplay.Economy.BankAccount",
+      "name": "Goverment",
+      "reference": true
+    }
+  }
+}
