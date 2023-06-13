@@ -1,0 +1,69 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+  "name": "Official Mining Manager",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "ElectionProcess": {
+      "type": "Eco.Gameplay.Civics.ElectionProcess",
+      "name": "Mining Offisial Election",
+      "reference": true
+    },
+    "EligibleCandidates": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "RequiredOfCandidates": null,
+    "MaxOccupants": 3,
+    "Successor": null,
+    "WhoCanRemoveFromOffice": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "TermLimitDays": 3.0,
+    "TotalTermsAllowed": 0,
+    "ConsecutiveTermsAllowed": 0,
+    "CanElectionsBeProposedDuringTerm": false,
+    "CanSetGlobalMarkers": false,
+    "CanSetGlobalObjective": false,
+    "CanSetTreasuryTaxes": false,
+    "CanUseTreasuryBankAccount": false,
+    "HasGovernmentBankingPrivileges": false,
+    "RequiredOfOfficeHolders": null,
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": {
+          "type": "GameValueWrapper",
+          "value": {
+            "type": "Eco.Gameplay.Economy.Currency",
+            "name": "Gold",
+            "reference": true
+          }
+        },
+        "AmountPerHour": {
+          "type": "GameValueWrapper",
+          "value": 0.0
+        },
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": {
+      "type": "Eco.Gameplay.Economy.BankAccount",
+      "name": "Goverment",
+      "reference": true
+    }
+  }
+}
