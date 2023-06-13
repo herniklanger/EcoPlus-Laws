@@ -1,0 +1,129 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+  "name": "Abandoned but not don",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "Conditions": [
+      {
+        "type": "Eco.Gameplay.Civics.GameValues.Values.DemographicRequirements",
+        "properties": {
+          "Demographics": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Civics.Demographics.Demographic"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:1949:157\"><icon name=\"Demographic\"><style=\"Government\">Abandoned</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+                "name": "Abandoned",
+                "reference": true
+              }
+            ]
+          },
+          "Citizen": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen being checked for this demographic."
+          },
+          "Requirements": "HasAny"
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.GameValues.Values.ResidentOfDistrict",
+        "properties": {
+          "Citizen": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen being checked for this demographic."
+          },
+          "Districts": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.LegislationSystem.District"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:2900:22386398\"><icon name=\"District\"><color=#FFFFFFFF>Government 2</color></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.LegislationSystem.District",
+                "name": "Government 2",
+                "reference": true
+              }
+            ]
+          },
+          "Requirements": "OutsideAll"
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.GameValues.Values.TitleRequirements",
+        "properties": {
+          "Titles": {
+            "type": "GamePickerList",
+            "mustDeriveType": {
+              "type": "Type",
+              "value": "Eco.Gameplay.Civics.Titles.Title"
+            },
+            "requiredTag": null,
+            "internalDescription": "<link=\"view:1048:12083515\"><icon name=\"AppointedTitle\"><style=\"Government\">Holiday</style></icon></link>",
+            "entries": [
+              {
+                "type": "Eco.Gameplay.Civics.Titles.AppointedTitle",
+                "name": "Holiday",
+                "reference": true
+              }
+            ]
+          },
+          "Citizen": {
+            "type": "GameValueContext",
+            "_name": "Citizen",
+            "markedUpName": "<icon name=\"User\">Citizen</icon>",
+            "contextDescription": "The citizen being checked for this demographic."
+          },
+          "Requirements": "HasNone"
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.GameValues.Not",
+        "properties": {
+          "NotValue": {
+            "type": "Eco.Mods.Companies.IsCompanyLegalPerson",
+            "properties": {
+              "Citizen": {
+                "type": "GameValueContext",
+                "_name": "Citizen",
+                "markedUpName": "<icon name=\"User\">Citizen</icon>",
+                "contextDescription": "The citizen being checked for this demographic."
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": null,
+        "AmountPerHour": null,
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": null
+  }
+}
