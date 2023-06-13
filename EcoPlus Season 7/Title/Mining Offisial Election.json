@@ -1,0 +1,30 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.ElectionProcess",
+  "name": "Mining Offisial Election",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Voters": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "Vetoers": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "HowToProceedIfElectionsEndInATie": "IncumbentPriority",
+    "MaximumElectionHours": 48.0,
+    "MinimumPercentOfEligibleVotersRequired": 1.0,
+    "PercentOfAllVotersToInstantWin": 51.0,
+    "PercentOfAllVotersToInstantLose": 51.0,
+    "EndElectionEarlyWhenThisPercentHaveVoted": 51.0,
+    "MinimumDaysBetweenElectionsOfThisType": 0.0,
+    "AnonymousVoting": true
+  }
+}
