@@ -1,0 +1,69 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Titles.ElectedTitle",
+  "name": "Banking",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "ElectionProcess": {
+      "type": "Eco.Gameplay.Civics.ElectionProcess",
+      "name": "Basic Election",
+      "reference": true
+    },
+    "EligibleCandidates": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "RequiredOfCandidates": {
+      "type": "Eco.Gameplay.Civics.GameValues.Values.IsAdmin",
+      "properties": {
+        "Citizen": {
+          "type": "GameValueContext",
+          "_name": "Citizen",
+          "markedUpName": "<icon name=\"User\">Citizen</icon>",
+          "contextDescription": "The candidate or office holder."
+        }
+      }
+    },
+    "MaxOccupants": 5,
+    "Successor": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "WhoCanRemoveFromOffice": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Admins",
+      "reference": true
+    },
+    "TermLimitDays": 360.0,
+    "TotalTermsAllowed": 10,
+    "ConsecutiveTermsAllowed": 10,
+    "CanElectionsBeProposedDuringTerm": true,
+    "CanSetGlobalMarkers": true,
+    "CanSetGlobalObjective": true,
+    "CanSetTreasuryTaxes": true,
+    "CanUseTreasuryBankAccount": true,
+    "HasGovernmentBankingPrivileges": true,
+    "RequiredOfOfficeHolders": null,
+    "BackupOwner": {
+      "type": "Eco.Gameplay.Civics.Demographics.Demographic",
+      "name": "Everyone",
+      "reference": true
+    },
+    "Wages": {
+      "type": "Eco.Gameplay.Economy.Jobs.RecurringTransferDefinition",
+      "reference": false,
+      "properties": {
+        "Currency": null,
+        "AmountPerHour": null,
+        "PaymentType": "OnlineAndOfflineHours"
+      }
+    },
+    "WagesSourceBankAccount": null
+  }
+}
